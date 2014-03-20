@@ -181,6 +181,19 @@
    <field name="era_facet" type="textFacet" indexed="true" stored="true" multiValued="true"/>
    <field name="illustrated" type="string" indexed="true" stored="true" multiValued="false"/>
    <field name="long_lat" type="textFacet" indexed="true" stored="true" multiValued="false"/>
+
+   <!-- CAMBIOS LAREFERENCIA -->
+   <field name="type" type="string" indexed="true" stored="true"/>
+   <field name="status" type="string" indexed="true" stored="true"/>
+   <field name="rights" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="eu_rights" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="identifier" type="string" indexed="true" stored="true" multiValued="true"/>  
+   <field name="country" type="string" indexed="true" stored="true"/>
+   <field name="country_iso" type="string" indexed="true" stored="true"/>
+   <field name="instname" type="string" indexed="true" stored="true"/>
+   <field name="reponame" type="string" indexed="true" stored="true"/>
+   <!-- fin CAMBIOS LAREFERENCIA -->
+
    <!-- Container fields (i.e. for describing journal containing an article) -->
    <field name="container_title" type="text" indexed="true" stored="true"/>
    <field name="container_volume" type="text" indexed="true" stored="true"/>
