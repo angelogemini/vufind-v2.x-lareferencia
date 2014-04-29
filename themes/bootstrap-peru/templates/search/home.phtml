@@ -32,6 +32,26 @@
   </div>
 </div>
 
+<div>
+<table>
+  <tr>
+    <td><img src="<?=$this->url("home")?>themes/bootstrap-peru/images/areas.jpg"/></td>
+    <td style="padding-left:30px;">
+       <p><strong><?=$this->transEsc('Find More')?></strong></p>
+       <ul>
+        <li><a href="<?=$this->url('browse-home')?>"><?=$this->transEsc('Browse the Catalog')?></a></li>
+        <li><a href="<?=$this->url('alphabrowse-home')?>"><?=$this->transEsc('Browse Alphabetically')?></a></li>
+        <li><a href="<?=$this->url('search-advanced')?>"><?=$this->transEsc('Advanced Search')?></a></li>
+        <li><a href="<?=$this->url('help-home')?>?topic=search" class="help-link" title="<?=$this->transEsc('Search Tips')?>"><?=$this->transEsc('Search Tips')?></a></li>
+
+        </ul>
+    </td>
+
+</tr>
+
+</table>
+</div>
+
 <? $facetList = is_object($this->results) ? $this->results->getFacetList() : array(); if (isset($facetList) && is_array($facetList)): ?>
 <div class="row-fluid">
   <? foreach ($facetList as $field => $details): ?>
