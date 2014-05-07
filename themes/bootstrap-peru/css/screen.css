@@ -1,3 +1,7 @@
+a.title {
+padding-left: 5px;
+}
+
 .block { display:block }
 .centered-pills { text-align:center }
 .centered-pills ul.nav-pills { display:inline-block }

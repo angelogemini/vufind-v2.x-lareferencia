@@ -1,7 +1,7 @@
 <div class="row-fluid result<?=$this->driver->supportsAjaxStatus()?' ajaxItem':''?>">
   <input type="hidden" value="<?=$this->escapeHtml($this->driver->getUniqueID())?>" class="hiddenId" />
   <input type="hidden" value="<?=$this->escapeHtml($this->driver->getResourceSource())?>" class="hiddenSource" />
-  <div class="span2 text-center left">
+  <!--div class="span2 text-center left">
     <a href="<?=$this->recordLink()->getUrl($this->driver)?>" class="title">
       <? if ($summThumb = $this->record($this->driver)->getThumbnail()): ?>
         <img class="img-polaroid" src="<?=$this->escapeHtml($summThumb)?>" alt="<?=$this->transEsc('Cover Image')?>"/>
@@ -9,8 +9,8 @@
         <img class="img-polaroid" src="<?=$this->url('cover-unavailable')?>" alt="<?=$this->transEsc('No Cover Image')?>"/>
       <? endif; ?>
     </a>
-  </div>
-  <div class="span7 middle">
+  </div-->
+  <div style="width:100%;"><!--class="span7 middle"-->
     <div>
       <a href="<?=$this->recordLink()->getUrl($this->driver)?>" class="title">
       <?
@@ -107,6 +107,17 @@
           <?=$this->openUrl($openUrl)?>
           <? if ($this->driver->replaceURLsWithOpenURL()) $urls = array(); // clear URL list if replace setting is active ?>
         <? endif; ?>
+        
+	<? /* Institución */ ?>
+        <? $institutions = $this->driver->getInstitutions(); ?>
+           
+        <? if (!empty($institutions) ): ?>
+        
+        <span><?=$institutions[0]?></span><br/>
+
+        <? endif; ?> 
+        
+
         <? if (!is_array($urls)) $urls = array();
           if(!$this->driver->isCollection()):
             foreach ($urls as $current): ?>
@@ -126,7 +137,7 @@
     </div>
   </div>
 
-  <div class="span2 noprint">
+  <!--div class="span2 noprint">
     <? /* Display qrcode if appropriate: */ ?>
     <? if ($QRCode = $this->record($this->driver)->getQRCode("results")): ?>
       <?
@@ -161,7 +172,7 @@
         </div>
       <? endforeach; ?>
     <? endif; ?>
-  </div>
+  </div-->
 </div>
 
 <?=$openUrl?'<span class="Z3988" title="'.$this->escapeHtml($openUrl).'"></span>':''?>
