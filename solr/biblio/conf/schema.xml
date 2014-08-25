@@ -220,6 +220,25 @@
    <dynamicField name="*_random" type="random" />
  </fields>
  <uniqueKey>id</uniqueKey>
+
+ <!-- CAMBIOS LAREFERENCIA -->
+   <field name="oid" type="string" indexed="true" stored="true"/>
+   <field name="oai_identifier" type="string" indexed="true" stored="true"/>
+
+   <field name="type" type="string" indexed="true" stored="true"/>
+   <field name="status" type="string" indexed="true" stored="true"/>
+   <field name="rights" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="eu_rights" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="identifier" type="string" indexed="true" stored="true" multiValued="true"/>  
+ 
+   <field name="network_name" type="string" indexed="true" stored="true"/>
+   <field name="network_acronym" type="string" indexed="true" stored="true"/>
+ 
+   <field name="instname" type="string" indexed="true" stored="true"/>
+   <field name="reponame" type="string" indexed="true" stored="true"/>
+
+<!-- fin CAMBIOS LAREFERENCIA -->
+
  <defaultSearchField>allfields</defaultSearchField>
  <!-- CopyFields for Spelling -->
  <!-- ** Basic, single word spelling -->
