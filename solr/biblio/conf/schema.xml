@@ -99,6 +99,24 @@
  <fields>
    <!-- Required by Solr 4.x -->
    <field name="_version_" type="long" indexed="true" stored="true"/>
+ <!-- CAMBIOS LAREFERENCIA -->
+   <field name="oid" type="string" indexed="true" stored="true"/>
+   <field name="oai_identifier" type="string" indexed="true" stored="true"/>
+
+   <field name="type" type="string" indexed="true" stored="true"/>
+   <field name="status" type="string" indexed="true" stored="true"/>
+   <field name="rights" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="eu_rights" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="identifier" type="string" indexed="true" stored="true" multiValued="true"/>  
+ 
+   <field name="network_name" type="string" indexed="true" stored="true"/>
+   <field name="network_acronym" type="string" indexed="true" stored="true"/>
+ 
+   <field name="instname" type="string" indexed="true" stored="true"/>
+   <field name="reponame" type="string" indexed="true" stored="true"/>
+
+<!-- fin CAMBIOS LAREFERENCIA -->
+
    <!-- Core Fields  -->
    <field name="id" type="string" indexed="true" stored="true"/>
    <field name="fullrecord" type="string" indexed="false" stored="true"/>
@@ -220,24 +238,6 @@
    <dynamicField name="*_random" type="random" />
  </fields>
  <uniqueKey>id</uniqueKey>
-
- <!-- CAMBIOS LAREFERENCIA -->
-   <field name="oid" type="string" indexed="true" stored="true"/>
-   <field name="oai_identifier" type="string" indexed="true" stored="true"/>
-
-   <field name="type" type="string" indexed="true" stored="true"/>
-   <field name="status" type="string" indexed="true" stored="true"/>
-   <field name="rights" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="eu_rights" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="identifier" type="string" indexed="true" stored="true" multiValued="true"/>  
- 
-   <field name="network_name" type="string" indexed="true" stored="true"/>
-   <field name="network_acronym" type="string" indexed="true" stored="true"/>
- 
-   <field name="instname" type="string" indexed="true" stored="true"/>
-   <field name="reponame" type="string" indexed="true" stored="true"/>
-
-<!-- fin CAMBIOS LAREFERENCIA -->
 
  <defaultSearchField>allfields</defaultSearchField>
  <!-- CopyFields for Spelling -->
