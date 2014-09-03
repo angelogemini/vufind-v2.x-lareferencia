@@ -1745,4 +1745,31 @@ class SolrDefault extends AbstractBase
             ? $this->fields['dedup_data']
             : array();
     }
+
+
+
+
+	/**
+     *
+     * @return array Array keyed by source id containing record id
+     */
+    public function getNetworkName()
+    {
+        return isset($this->fields['network_name'])
+            ? $this->fields['network_name']
+            : array();
+    }
+ 
+	/**
+     *
+     * @return array Array keyed by source id containing record id
+     */
+    public function getNetworkAcronym()
+    {
+        return isset($this->fields['network_acronym'])
+            ? $this->fields['network_acronym]
+            : array();
+    }
+
+	
 }
