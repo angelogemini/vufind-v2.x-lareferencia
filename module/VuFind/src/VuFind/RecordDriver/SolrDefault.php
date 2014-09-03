@@ -1767,7 +1767,7 @@ class SolrDefault extends AbstractBase
     public function getNetworkAcronym()
     {
         return isset($this->fields['network_acronym'])
-            ? $this->fields['network_acronym]
+            ? $this->fields['network_acronym']
             : array();
     }
 
