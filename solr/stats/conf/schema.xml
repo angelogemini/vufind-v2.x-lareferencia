@@ -7,10 +7,11 @@
     <fieldtype name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
     <fieldtype name="date" class="solr.TrieDateField" sortMissingLast="true" omitNorms="true" precisionStep="6"/>
 
-	<fieldType name="dm_date" class="solr.TextField" positionIncrementGap="100">
-      <analyzer>
-        <tokenizer class="solr.PatternTokenizerFactory" pattern="^(\d{4}\-\d\{2}).*$" group="1"/>
-      </analyzer>
+    <fieldType name="dmfield" class="solr.TextField" positionIncrementGap="100">
+    	<analyzer>
+        	<tokenizer class="solr.PatternTokenizerFactory" pattern="^(\d{4}\-\d{2}).*$" group="1"/>
+        	<filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer> 
     </fieldType>
 
   </types>
@@ -20,7 +21,7 @@
    <!-- Core Fields  -->
    <field name="id" type="string" indexed="true" stored="true"/>
    <field name="datestamp" type="date" indexed="true" stored="true"/>
-   <field name="year_month" type="dm_date" indexed="true" stored="true"/>
+   <field name="year_month" type="dmfield" indexed="true" stored="false"/>
 
    <!-- Institutional Fields -->
    <field name="institution" type="string" indexed="true" stored="true" multiValued="true"/>
