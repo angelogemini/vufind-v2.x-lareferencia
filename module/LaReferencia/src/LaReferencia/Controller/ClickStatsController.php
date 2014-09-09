@@ -48,9 +48,11 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
     {
        
         $view = $this->createViewModel();
-        $view->setTemplate('admin/statistics/home');
+        $view->setTemplate('lareferencia/clickstats/home');
         $config = $this->getConfig();
 
+        
+        /**
         // Search statistics
         $search = $this->getServiceLocator()->get('VuFind\SearchStats');
         $view->searchesBySource
@@ -111,7 +113,7 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
         } else {
             $view->browserStats = $view->topVersions = null;
         }
-
+		**/
         return $view;
     }
 }
