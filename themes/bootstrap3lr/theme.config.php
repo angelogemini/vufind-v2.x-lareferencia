@@ -27,7 +27,7 @@ return array(
     'helpers' => array(
         'factories' => array(
             'flashmessages' => 'VuFind\View\Helper\Bootstrap3\Factory::getFlashmessages',
-            'layoutclass' => 'VuFind\View\Helper\Bootstrap3\Factory::getLayoutClass',
+            'layoutclass' => 'LaReferencia\View\Helper\Bootstrap3LR\Factory::getLayoutClass',
         ),
         'invokables' => array(
             'highlight' => 'VuFind\View\Helper\Bootstrap3\Highlight',
