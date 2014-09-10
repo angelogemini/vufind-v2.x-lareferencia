@@ -7,6 +7,12 @@ $config = array(
             'clickstats' => 'LaReferencia\Controller\ClickStatsController',
         ),
     ),
+	'service_manager' => array(
+			'allow_override' => true,
+			'factories' => array(
+					'LaReferencia\RecordStats' => 'LaReferencia\Service\Factory::getRecordStats',
+			),
+	),
     'router' => array(
         'routes' => array(
             'clickstats' => array(

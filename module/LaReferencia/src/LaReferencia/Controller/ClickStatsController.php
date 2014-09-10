@@ -67,9 +67,10 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
             ? $searchSummary['empty'] : null;
         $view->totalSearches = isset($searchSummary['total'])
             ? $searchSummary['total'] : null;
-
+	    */
+        
         // Record statistics
-        $records = $this->getServiceLocator()->get('VuFind\RecordStats');
+        $records = $this->getServiceLocator()->get('LaReferencia\RecordStats');
         $view->recordsBySource = $config->Statistics->recordsBySource ?: false;
         $recordSummary = $records->getStatsSummary(
             5, $config->Statistics->recordsBySource
@@ -78,7 +79,8 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
             ? $recordSummary['top'] : null;
         $view->totalRecordViews = isset($recordSummary['total'])
             ? $recordSummary['total'] : null;
-
+		
+		/**
         // Browser statistics
         $view->currentBrowser = $search->getBrowser(
             $this->getRequest()->getServer('HTTP_USER_AGENT')
