@@ -70,7 +70,9 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
 	    */
         
         // Record statistics
-        $records = $this->getServiceLocator()->get('LaReferencia\RecordStats');
+        $records = $this->getServiceLocator()->get('LaReferencia\SolrStats');
+        
+        /**
         $view->recordsBySource = $config->Statistics->recordsBySource ?: false;
         $recordSummary = $records->getStatsSummary(
             5, $config->Statistics->recordsBySource
@@ -79,7 +81,7 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
             ? $recordSummary['top'] : null;
         $view->totalRecordViews = isset($recordSummary['total'])
             ? $recordSummary['total'] : null;
-		
+		**/
 		/**
         // Browser statistics
         $view->currentBrowser = $search->getBrowser(
