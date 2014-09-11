@@ -51,7 +51,10 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
         $view->setTemplate('lareferencia/clickstats/home');
         $config = $this->getConfig();
 
-	$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');        
+	$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');   
+	$solrStats->getClicksPerSource();
+
+	
         
 	/**
         // Search statistics

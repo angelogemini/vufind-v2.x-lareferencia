@@ -57,6 +57,27 @@ class SolrStats
     {
         $this->solrBackend = $backend;
     }
+    
+    /**
+     * Get the total count of a field.
+     *
+     * @param string $field What field of data are we researching?
+     * @param array  $value Extra options for search. Value => match this value
+     *
+     * @return array
+     */
+    public function getClicksPerSource()
+    {
+    	$query = new Query('*:*');
+    	$params = new ParamBag();
+    	$params->add('facet', 'true');
+    	$params->add('facet.pivot', 'year_month,recodSource');
+    	 
+    	$response = $this->solrBackend->search($query, 0, 0, $params);
+    	
+    	return $response->getPivotFacets();
+    
+    }
 
 
 }
