@@ -57,6 +57,22 @@ class Factory
         );
     }
 
+
+     /**
+     * Construct the record stats helper.
+     *
+     * @param ServiceManager $sm Service manager.
+     *
+     * @return \VuFind\Statistics\Record
+     */
+    public static function getSolrStats(ServiceManager $sm)
+    {
+        //$sm->getServiceLocator()->get('VuFind\Search\BackendManager')->get('SolrStats')
+        
+        return new \LaReferencia\Statistics\SolrStats( $sm->get('VuFind\Search\BackendManager')->get('SolrStats') ); 
+    }    
+
+
     /**
      * Construct the search stats helper.
      *

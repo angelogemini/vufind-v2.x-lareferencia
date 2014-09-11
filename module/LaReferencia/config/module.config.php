@@ -10,7 +10,7 @@ $config = array(
 	'service_manager' => array(
 			'allow_override' => true,
 			'factories' => array(
-					'LaReferencia\SolrStats' => 'LaReferencia\Statistics\Factory::getSolrStats',
+					'LaReferencia\SolrStats' => 'LaReferencia\Service\Factory::getSolrStats',
 			),
 	),
     'router' => array(
