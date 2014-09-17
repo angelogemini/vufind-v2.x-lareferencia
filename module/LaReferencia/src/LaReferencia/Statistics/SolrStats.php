@@ -70,12 +70,14 @@ class SolrStats
     {
     	$query = new Query('*:*');
     	$params = new ParamBag();
-    	$params->add('facet', 'true');
-    	$params->add('facet.pivot', 'year_month,recodSource');
+    	$params->add('fl', '');
+
+        $params->add('facet', 'true');
+    	$params->add('facet.pivot', 'year_month,recordSource');
     	 
-    	$response = $this->solrBackend->search($query, 0, 0, $params);
+    	$response = $this->solrBackend->search($query, 1, 10, $params);
     	
-    	return $response->getPivotFacets();
+    	return $response->getFacets();
     
     }
 

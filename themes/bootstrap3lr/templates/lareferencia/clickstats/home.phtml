@@ -8,15 +8,48 @@
     
 ?>
 
+<table class="table table-striped">
+<?=json_encode($this->pivots) ?>
+ <? foreach($this->pivots[0]['pivot'] as $record): ?>
+          <tr><td><?=serialize($record)?></td></tr>
+<? endforeach; ?>
+
+</table>
+
+
+
 <div class="<?=$this->layoutClass('widebody')?>">
   <h2><?=$this->transEsc('Statistics')?></h2>
   
+<? if(!empty($this->topRecords)): ?>
+    <h3>Top Records<? if($this->recordsBySource): ?> by Source<? endif; ?></h3>
+    <? if($this->recordsBySource): ?>
+      <? foreach($this->topRecords as $source=>$records): ?>
+        <span style="font-size:14px"><?=$source ?></span>
+        <table class="table table-striped">
+        <? foreach($records as $record): ?>
+          <tr><td><?=$record['value'] ?></td><td><?=$record['count'] ?></td></tr>
+        <? endforeach; ?>
+        </table>
+      <? endforeach; ?>
+    <? else: ?>
+      <table class="table table-striped">
+        <? foreach($this->topRecords as $record): ?>
+          <tr><td><?=$record['value'] ?></td><td><?=$record['count'] ?></td><td><?=$record['source'] ?></td></tr>
+        <? endforeach; ?>
+      </table>
+    <? endif; ?>
+  <? endif; ?>
+
+
+
+
   
    <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Clicks segœn repositorio
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Clicks seg&uacute;n repositorio
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -61,22 +94,22 @@ Morris.Line({
     data: [{
         period: '2010 Q1',
         iphone: 2666,
-        ipad: null,
+        ipad: 100,
         itouch: 2647
     }, {
-        period: '2010 Q2',
+        period: '2011 Q1',
         iphone: 2778,
         ipad: 2294,
         itouch: 2441
     }, {
-        period: '2010 Q3',
+        period: '2012 Q3',
         iphone: 4912,
         ipad: 1969,
         itouch: 2501
     },],
     xkey: 'period',
     ykeys: ['iphone', 'ipad', 'itouch'],
-    labels: ['iPhone', 'iPad', 'iPod Touch'],
+    labels: ['Argentina', 'Brasil', 'M&eacute;xico'],
     pointSize: 2,
     hideHover: 'auto',
     resize: true

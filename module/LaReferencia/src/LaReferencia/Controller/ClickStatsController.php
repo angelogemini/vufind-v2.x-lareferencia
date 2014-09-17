@@ -52,9 +52,8 @@ class ClickStatsController extends \VuFind\Controller\AbstractBase
         $config = $this->getConfig();
 
 	$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');   
-	$solrStats->getClicksPerSource();
 
-	
+        $view->pivots = $solrStats->getClicksPerSource()->getPivotFacets() ;	
         
 	/**
         // Search statistics
