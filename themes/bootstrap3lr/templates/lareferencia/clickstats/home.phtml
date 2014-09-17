@@ -56,6 +56,7 @@
 
 var rawJson =  <?=json_encode($this->pivots) ?>;
 var data = [];
+var sources = {}
 
 $.each( rawJson, function( key, value ) {
   var entry = {}
@@ -63,6 +64,7 @@ $.each( rawJson, function( key, value ) {
 
   $.each( value.pivot, function( i, pivot ) {
 	entry[pivot.value] = pivot.count;
+	sources[pivot.value] = "";
   });
 
   data.push(entry);
@@ -72,8 +74,8 @@ Morris.Line({
     element: 'clicks-line-chart',
     data: data,
     xkey: 'timestamp', 
-//    ykeys: ['iphone', 'ipad', 'itouch'],
-//   labels: ['Argentina', 'Brasil', 'M&eacute;xico'],
+	ykeys: sources.keys(),
+	labels: sources.keys(),
     pointSize: 2,
     hideHover: 'auto',
     resize: true
