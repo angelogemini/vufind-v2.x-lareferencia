@@ -4,7 +4,7 @@ namespace LaReferencia\Module\Configuration;
 $config = array(
     'controllers' => array(
         'invokables' => array(
-            'clickstats' => 'LaReferencia\Controller\ClickStatsController',
+            'statistics' => 'LaReferencia\Controller\StatisticsController',
         ),
     ),
 	'service_manager' => array(
@@ -15,20 +15,20 @@ $config = array(
 	),
     'router' => array(
         'routes' => array(
-            'clickstats' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/ClickStats',
-                    'defaults' => array(
-                        'controller' => 'ClickStats',
-                        'action'     => 'Home',
-                    )
-                ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                   
-                ),
-            ),
+        	'default' => array(
+        		'type'    => 'Zend\Mvc\Router\Http\Segment',
+        		'options' => array(
+	        		'route'    => '/[:controller[/[:action]]]',
+	        		'constraints' => array(
+	        			'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+	        			'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+	        		),
+	        		'defaults' => array(
+	        					'controller' => 'statistics',
+        						'action'     => 'Clicks',
+        			),
+        		),
+        	),
         ),
     ),
 );

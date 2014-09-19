@@ -1,6 +1,6 @@
 <?
     // Set page title.
-    $this->headTitle($this->translate('Click Statistics'));
+    $this->headTitle($this->translate('Statistics'));
     
     $this->headLink()->appendStylesheet('vendor/morris.css');
     $this->headLink()->appendStylesheet('vendor/dataTables.bootstrap.css');
@@ -114,6 +114,8 @@ Morris.Line({
     hideHover: false,
     resize: true
 });
+
+
 
 var columns = [];
 columns.push({ 'data':'timestamp', 'title':'Período' });

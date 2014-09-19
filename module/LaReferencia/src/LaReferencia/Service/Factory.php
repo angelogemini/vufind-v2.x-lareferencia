@@ -69,7 +69,7 @@ class Factory
     {
         //$sm->getServiceLocator()->get('VuFind\Search\BackendManager')->get('SolrStats')
         
-        return new \LaReferencia\Statistics\SolrStats( $sm->get('VuFind\Search\BackendManager')->get('SolrStats') ); 
+        return new \LaReferencia\Statistics\SolrStats( $sm->get('VuFind\Search\BackendManager') ); 
     }    
 
 

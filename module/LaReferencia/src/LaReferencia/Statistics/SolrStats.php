@@ -30,6 +30,7 @@ namespace LaReferencia\Statistics;
 use VuFindSearch\Backend\Solr\Backend;
 use VuFindSearch\Query\Query;
 use VuFindSearch\ParamBag;
+use VuFind\Search\BackendManager;
 
 /**
  * @category VuFind2
@@ -46,16 +47,21 @@ class SolrStats
      *
      * @var Backend
      */
-    protected $solrBackend;
+    protected $solrBackendMngr;
+    protected $solrBiblioBackend;
+    protected $solrStatsBackend;
+    
 
     /**
      * Constructor
      *
      * @param Backend $backend Solr backend
      */
-    public function __construct(Backend $backend)
+    public function __construct(BackendManager $backendMngr)
     {
-        $this->solrBackend = $backend;
+        $this->solrBackendMngr = $backendMngr;
+        $this->solrBiblioBackend = $backendMngr->get("Solr");
+        $this->solrStatsBackend =  $backendMngr->get("SolrStats");
     }
     
     /**
@@ -75,7 +81,7 @@ class SolrStats
         $params->add('facet', 'true');
     	$params->add('facet.pivot', 'year_month,recordSource');
     	 
-    	$response = $this->solrBackend->search($query, 1, 10, $params);
+    	$response = $this->solrStatsBackend->search($query, 1, 10, $params);
     	
     	return $response->getFacets();
     
