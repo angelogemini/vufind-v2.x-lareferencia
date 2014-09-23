@@ -81,11 +81,71 @@ class SolrStats
         $params->add('facet', 'true');
     	$params->add('facet.pivot', 'year_month,recordSource');
     	 
-    	$response = $this->solrStatsBackend->search($query, 1, 10, $params);
+    	$response = $this->solrStatsBackend->search($query, 0, 0, $params);
     	
     	return $response->getFacets();
     
     }
+    
+    /**
+     * Get the total count of a field.
+     *
+     * @param string $field What field of data are we researching?
+     * @param array  $value Extra options for search. Value => match this value
+     *
+     * @return array
+     */
+    public function getFieldsCountPerNetwork($fieldsArray)
+    {
+    	$query = new Query('*:*');
+    	$params = new ParamBag();
+    	$params->add('fl', '');
+    	$params->add('facet', 'true');
+    	
+    	$params->add('facet.field', "network_name");	 
+    	
+    	foreach ($fieldsArray as $field) {
+    		$params->add('facet.field', $field);
+    		$params->add('facet.pivot', 'network_name,'.$field);
+    	}
+    	    
+    	$response = $this->solrBiblioBackend->search($query, 0, 0, $params);
+    
+    	
+    	 
+    	return $this->solrResponseToFacetsArray($response);
+    }
+    
+    
+    public function solrResponseToFacetsArray($solrResponse) {
+    	
+    	$response = array();
+    	$response["fields"] = array();
+    	    	
+    	foreach ($solrResponse->getFacets()->getFieldFacets()->getArrayCopy() as $key => $value) {		
+    		$response["fields"][$key] = array( "values" => array() );
+    		
+    		foreach($value->toArray() as $f_value => $f_count) {			
+    			array_push( $response["fields"][$key]["values"], array( "label" => $f_value, "value" => $f_count ));		
+    		}
+    	}
+    		
+    	$response["pivots"] = array(); 
+    	foreach ($solrResponse->getFacets()->getPivotFacets()->getArrayCopy() as $key => $value) {
+    		
+    		$response["pivots"][$key]["values"] = array();
+    				
+    		foreach($value["pivot"] as $pivot) {
+    			unset($pivot["field"]);
+    			array_push( $response["pivots"][$key]["values"], array( "label" => $pivot["value"], "value" => $pivot["count"] ) );
+    		
+    		} 
+    	}
+    	
+    	return $response;
+    }
+    
+    
 
 
 }

@@ -48,7 +48,7 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     {
        
         $view = $this->createViewModel();
-        $view->setTemplate('lareferencia/clickstats/home');
+        $view->setTemplate('lareferencia/stats/clicks');
         $config = $this->getConfig();
 
 		$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');   
@@ -57,5 +57,27 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
         
         return $view;
     }
+    
+    /**
+     * Statistics reporting
+     *
+     * @return \Zend\View\Model\ViewModel
+     */
+    public function countAction()
+    {
+    	 
+    	$view = $this->createViewModel();
+    	$view->setTemplate('lareferencia/stats/count');
+    	$config = $this->getConfig();
+    
+    	$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');
+    
+    	$fieldsArray = array( "type" );
+    	$view->data = $solrStats->getFieldsCountPerNetwork($fieldsArray);
+    	
+    
+    	return $view;
+    }
+    
 }
 
