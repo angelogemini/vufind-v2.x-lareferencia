@@ -11,6 +11,8 @@ $config = array(
 			'allow_override' => true,
 			'factories' => array(
 					'LaReferencia\SolrStats' => 'LaReferencia\Service\Factory::getSolrStats',
+					'LaReferencia\LRBackendStats' => 'LaReferencia\Service\Factory::getLRBackendStats',
+						
 			),
 	),
     'router' => array(

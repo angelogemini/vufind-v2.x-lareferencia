@@ -58,7 +58,7 @@
 			<? foreach ( $dataByNetwork["pivots"] as $network => $data): ?>
 			    			
             
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                		<div class="panel panel-default">
                     	<div class="panel-heading">
                               <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> <?=$network?></h3>
@@ -91,7 +91,7 @@
 <script type="text/javascript">
 
 var rawJson =  <?=json_encode($this->data) ?>;
-var data = rawJson["fields"]["type"].values;
+var data = rawJson["fields"][<?=json_encode($this->field) ?>].values;
 var sources = {};
 
 Morris.Donut({

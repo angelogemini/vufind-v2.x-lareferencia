@@ -95,14 +95,18 @@ class SolrStats
      *
      * @return array
      */
-    public function getFieldsCountPerNetwork($fieldsArray)
+    public function getFieldsCountPerNetwork($fieldsArray, $limit)
     {
     	$query = new Query('*:*');
     	$params = new ParamBag();
     	$params->add('fl', '');
     	$params->add('facet', 'true');
     	
-    	$params->add('facet.field', "network_name");	 
+    	$params->add('facet.field', "network_name");
+    	$params->add('facet.sort', "count");
+    	$params->add('facet.limit', $limit);
+    	 
+    	 
     	
     	foreach ($fieldsArray as $field) {
     		$params->add('facet.field', $field);

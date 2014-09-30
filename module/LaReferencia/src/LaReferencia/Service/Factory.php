@@ -41,23 +41,6 @@ use Zend\ServiceManager\ServiceManager;
 class Factory
 {
     
-    /**
-     * Construct the record stats helper.
-     *
-     * @param ServiceManager $sm Service manager.
-     *
-     * @return \VuFind\Statistics\Record
-     */
-    public static function getRecordStats(ServiceManager $sm)
-    {
-        return new \VuFind\Statistics\Record(
-            $sm->get('VuFind\Config')->get('config'),
-            $sm->get('VuFind\StatisticsDriverPluginManager'),
-            $sm->get('VuFind\SessionManager')->getId()
-        );
-    }
-
-
      /**
      * Construct the record stats helper.
      *
@@ -71,23 +54,23 @@ class Factory
         
         return new \LaReferencia\Statistics\SolrStats( $sm->get('VuFind\Search\BackendManager') ); 
     }    
-
-
+    
+    
     /**
-     * Construct the search stats helper.
+     * Construct the record stats helper.
      *
      * @param ServiceManager $sm Service manager.
      *
-     * @return \VuFind\Statistics\Search
+     * @return \VuFind\Statistics\Record
      */
-    public static function getSearchStats(ServiceManager $sm)
+    public static function getLRBackendStats(ServiceManager $sm)
     {
-        return new \VuFind\Statistics\Search(
-            $sm->get('VuFind\Config')->get('config'),
-            $sm->get('VuFind\StatisticsDriverPluginManager'),
-            $sm->get('VuFind\SessionManager')->getId()
-        );
+    	//$sm->getServiceLocator()->get('VuFind\Search\BackendManager')->get('SolrStats')
+    
+    	return new \LaReferencia\Statistics\LRBackendStats();
     }
+
+
 
    
 }

@@ -65,6 +65,10 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
      */
     public function countAction()
     {
+    	
+    	$field = $this->params()->fromQuery('field', 'type');
+    	$limit = $this->params()->fromQuery('limit', -1);
+    	 
     	 
     	$view = $this->createViewModel();
     	$view->setTemplate('lareferencia/stats/count');
@@ -72,9 +76,28 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     
     	$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');
     
-    	$fieldsArray = array( "type" );
-    	$view->data = $solrStats->getFieldsCountPerNetwork($fieldsArray);
+    	$fieldsArray = array( $field );
+    	$view->data = $solrStats->getFieldsCountPerNetwork($fieldsArray, $limit);
+    	$view->field = $field;
+    
+    	return $view;
+    }
+    
+    /**
+     * Statistics reporting
+     *
+     * @return \Zend\View\Model\ViewModel
+     */
+    public function networksAction()
+    {
     	
+    	$view = $this->createViewModel();
+    	$view->setTemplate('lareferencia/stats/networks');
+    	$config = $this->getConfig();
+    
+    	$lrbStats = $this->getServiceLocator()->get('LaReferencia\LRBackendStats');
+    
+    	$view->data = $lrbStats->getNetworkList();
     
     	return $view;
     }
