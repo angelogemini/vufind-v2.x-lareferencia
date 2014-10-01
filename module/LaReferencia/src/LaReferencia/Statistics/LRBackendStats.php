@@ -91,12 +91,13 @@ class LRBackendStats
     		$aggrInfo[self::VALID_TAG] = $aggrInfo[self::VALID_TAG] + $networkInfo[self::VALID_TAG];
     		
     		
-    		$networks[ $networkInfo[ self::NAME_TAG ] ] = array(
+    		array_push($networks, array(
+    				self::NAME_TAG		  => $networkInfo[ self::NAME_TAG ],
     				self::VALID_TAG 	  => $networkInfo[self::VALID_TAG], 
     				self::TRANSFORMED_TAG => $networkInfo[self::TRANSFORMED_TAG], 
     				self::TOTAL_TAG 	  => $networkInfo[self::TOTAL_TAG]
-    				
-    		); 
+    				 
+    		) ); 
     		
     	}
     	
@@ -105,6 +106,21 @@ class LRBackendStats
     	
     	return $response;
     }
+    
+    /**
+     * Get the total count of a field.
+     *
+     * @param string $field What field of data are we researching?
+     * @param array  $value Extra options for search. Value => match this value
+     *
+     * @return array*/
+    
+    public function getHarvestingHistory()
+    { 
+    	return $this->callJSONService( "http://localhost:8090/public/listValidPublicSnapshotsStats" );
+    }
+         
+
     
     private function callJSONService($serviceURL) {
     	return json_decode( file_get_contents($serviceURL), true );   	 

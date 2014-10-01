@@ -98,6 +98,7 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     	$lrbStats = $this->getServiceLocator()->get('LaReferencia\LRBackendStats');
     
     	$view->data = $lrbStats->getNetworkList();
+    	$view->harvestingHistory = $lrbStats->getHarvestingHistory();
     
     	return $view;
     }
