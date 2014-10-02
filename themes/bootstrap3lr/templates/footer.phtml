@@ -1,26 +1,66 @@
 <? if ($mobileViewLink = $this->mobileUrl()): // display 'return to mobile' link when applicable ?>
-  <hr/>
-  <div class="mobileViewLink"><a href="<?=$this->escapeHtmlAttr($mobileViewLink)?>" class="btn btn-primary btn-lg"><?=$this->transEsc("mobile_link")?></a></div>
+<hr />
+<div class="mobileViewLink">
+	<a href="<?=$this->escapeHtmlAttr($mobileViewLink)?>"
+		class="btn btn-primary btn-lg"><?=$this->transEsc("mobile_link")?></a>
+</div>
 <? endif; ?>
-<hr/>
-<div class="col-sm-4"><p><strong><?=$this->transEsc('Search Options')?></strong></p>
-<ul>
-  <li><a href="<?=$this->url('search-history')?>"><?=$this->transEsc('Search History')?></a></li>
-  <li><a href="<?=$this->url('search-advanced')?>"><?=$this->transEsc('Advanced Search')?></a></li>
-</ul>
-</div>
-<div class="col-sm-4"><p><strong><?=$this->transEsc('Find More')?></strong></p>
-<ul>
-  <li><a href="<?=$this->url('browse-home')?>"><?=$this->transEsc('Browse the Catalog')?></a></li>
-  <li><a href="<?=$this->url('alphabrowse-home')?>"><?=$this->transEsc('Browse Alphabetically')?></a></li>
-  <li><a href="<?=$this->url('search-reserves')?>"><?=$this->transEsc('Course Reserves')?></a></li>
-  <li><a href="<?=$this->url('search-newitem')?>"><?=$this->transEsc('New Items')?></a></li>
-</ul>
-</div>
-<div class="col-sm-4"><p><strong><?=$this->transEsc('Need Help?')?></strong></p>
-<ul>
-  <li><a href="<?=$this->url('help-home')?>?topic=search" class="help-link" title="<?=$this->transEsc('Search Tips')?>"><?=$this->transEsc('Search Tips')?></a></li>
-  <li><a href="#"><?=$this->transEsc('Ask a Librarian')?></a></li>
-  <li><a href="#"><?=$this->transEsc('FAQs')?></a></li>
-</ul>
+<div class="row">
+	<div class="col-md-4 md-margin-bottom-40">
+		<!-- About -->
+		<div class="headline">
+			<h2>Acerca de</h2>
+		</div>
+		<p class="margin-bottom-25 md-margin-bottom-40">Donec id elit non mi
+			porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,
+			tortor mauris condimentum nibh, ut fermentum massa justo sit am.</p>
+		<!-- End About -->
+	</div>
+	<!--/col-md-4-->
+
+	<div class="col-md-4 md-margin-bottom-40">
+		<!-- Instutional site -->
+		<div class="headline">
+			<h2>Sitio istitucional</h2>
+		</div>
+		<p>
+			<a href="http://lareferencia.redclara.net" target="_blank">http://lareferencia.redclara.net</a>
+		</p>
+		<!-- End Instutional site -->
+
+		<!-- Contact Us -->
+		<div class="headline">
+			<h2>Contáctenos</h2>
+		</div>
+		<address class="md-margin-bottom-40">
+			Email: <a href="mailto: repositoriosla@gmail.com" class="">
+				repositoriosla@gmail.com</a>
+		</address>
+		<!-- End Contact Us -->
+
+	</div>
+	<!--/col-md-4-->
+
+	<div class="col-md-4">
+		<!-- Contact Us -->
+		<div class="headline">
+			<h2>Preguntas Frecuentes</h2>
+		</div>
+		<p></p>
+		<!-- End Contact Us -->
+
+		<!-- Social Links -->
+		<div class="headline">
+			<h2>Síguenos</h2>
+		</div>
+		<ul class="social-icons">
+			<li><a href="#" data-original-title="Facebook"
+				class="social_facebook"></a></li>
+			<li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
+			<li><a href="#" data-original-title="Goole Plus"
+				class="social_googleplus"></a></li>
+		</ul>
+		<!-- End Social Links -->
+	</div>
+	<!--/col-md-4-->
 </div>

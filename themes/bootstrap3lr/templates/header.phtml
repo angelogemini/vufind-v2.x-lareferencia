@@ -62,17 +62,17 @@
 <div class="navbar navbar-default" role="navigation">
   <div class="container">
 	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-collapse">
-	    <span class="sr-only">Toggle navigation</span>
-	    <i class="fa fa-bars"></i>
-	  </button>
-	  <a role="logo" class="navbar-brand" href="<?=$this->url('home')?>">LA Refrencia</a>
-	  <!-- include dropdows -->	  
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </button>
+	  <a role="logo" class="navbar-brand" href="<?=$this->url('home')?>"><img alt="LA Referencia" src="<?=$this->imageLink('logo.jpg') ?>"></a> 
 	</div>
 	<div class="collapse navbar-collapse navbar-responsive-collapse">
-		<?=$this->render('nav-dropdowns.html')?>
+		<?=$this->render('nav-dropdowns.phtml')?>
 	</div>
   </div>
+  <div id="mini-header"></div>
 </div>	
 <? if ($this->layout()->searchbox !== false): ?>
   <section class="visible-lg">
