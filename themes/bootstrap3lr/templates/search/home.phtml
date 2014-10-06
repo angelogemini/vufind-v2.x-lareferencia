@@ -1,80 +1,223 @@
 <?
-  // Set page title.
-  $this->headTitle($this->translate('Search Home'));
+// Set page title.
+$this->headTitle ( $this->translate ( 'Search Home' ) );
 
-  // Disable top search box -- this page has a special layout.
-  $this->layout()->searchbox = false;
+// Init home's script
+$this->headScript()->appendFile("init-home.js");
 
-  // Set default value if necessary:
-  if (!isset($this->searchClassId)) {
-    $this->searchClassId = 'Solr';
-  }
+// Disable top search box -- this page has a special layout.
+$this->layout ()->searchbox = false;
 
-  // Load search actions and settings (if any):
-  $options = $this->searchOptions($this->searchClassId);
-  $basicSearch = $options->getSearchAction();
-  $advSearch = $options->getAdvancedSearchAction();
+// Set default value if necessary:
+if (! isset ( $this->searchClassId )) {
+	$this->searchClassId = 'Solr';
+}
 
-  $this->layout()->breadcrumbs = false;
+// Load search actions and settings (if any):
+$options = $this->searchOptions ( $this->searchClassId );
+$basicSearch = $options->getSearchAction ();
+$advSearch = $options->getAdvancedSearchAction ();
+
+$this->layout ()->breadcrumbs = false;
 ?>
 <div class="searchHomeContent">
   <? if ($this->ils()->getOfflineMode() == "ils-offline"): ?>
     <div class="alert alert-warning">
-      <h2><?=$this->transEsc('ils_offline_title')?></h2>
-      <p><strong><?=$this->transEsc('ils_offline_status')?></strong></p>
-      <p><?=$this->transEsc('ils_offline_home_message')?></p>
+		<h2><?=$this->transEsc('ils_offline_title')?></h2>
+		<p>
+			<strong><?=$this->transEsc('ils_offline_status')?></strong>
+		</p>
+		<p><?=$this->transEsc('ils_offline_home_message')?></p>
       <? $supportEmail = $this->escapeHtmlAttr($this->systemEmail()); ?>
-      <p><a href="mailto:<?=$supportEmail?>"><?=$supportEmail?></a></p>
-    </div>
+      <p>
+			<a href="mailto:<?=$supportEmail?>"><?=$supportEmail?></a>
+		</p>
+	</div>
   <? endif; ?>
-  <div class="well well-lg clearfix">
-    <?=$this->render("search/searchbox.phtml")?>
+  <div class="clearfix">
+    <?=$this->render("search/searchboxhome.phtml")?>
   </div>
 </div>
 
-<? $facetList = is_object($this->results) ? $this->results->getFacetList() : array(); if (isset($facetList) && is_array($facetList)): ?>
-<div class="row">
-  <? foreach ($facetList as $field => $details): ?>
-    <? $sortedList = $this->sortFacetList($this->results, $field, $details['list'], $basicSearch); ?>
-    <div class="<?=$field=='callnumber-first' ? 'col-sm-6' : 'col-sm-3' ?>">
-      <p class="lead"><?=$this->transEsc('home_browse') . ' ' . $this->transEsc($details['label'])?></p>
-      <div class="row">
-        <ul class="list-unstyled <?=$field == "callnumber-first" ? 'col-sm-6' : 'col-sm-12' ?>">
-        <? /* Special case: two columns for LC call numbers... */ ?>
-        <? if ($field == "callnumber-first"): ?>
-          <? $i = 0; foreach ($sortedList as $url => $value): ?>
-            <? if (!empty($value)): ?>
-              <li><a href="<?=$url?>"><?=$this->escapeHtml($value)?></a></li>
-            <? else: $i--; ?>
-            <? endif; ?>
-            <? if (++$i == 10): ?>
-              </ul><ul class="list-unstyled col-sm-6">
-            <? endif; ?>
-          <? endforeach; ?>
-        <? /* Special case: collections */ ?>
-        <? elseif ($field == 'hierarchy_top_title'): ?>
-          <? $i = 0; foreach ($sortedList as $url => $value): ?>
-            <? if (++$i > 10): ?>
-              <li><a href="<?=$this->url('collections-home')?>"><strong><?=$this->transEsc("More options")?>...</strong></a></li>
-              <? break; ?>
-            <? else: ?>
-              <li><a href="<?=$this->url('collections-bytitle')?>?title=<?=urlencode($value)?>"><?=$this->escapeHtml($value)?></a></li>
-            <? endif; ?>
-          <? endforeach; ?>
-        <? else: ?>
-          <? $i = 0; foreach ($sortedList as $url => $value): ?>
-            <? if (++$i > 10): ?>
-              <li><a href="<?=$this->url($advSearch)?>"><strong><?=$this->transEsc("More options")?>...</strong></a></li>
-              <? break; ?>
-            <? elseif (!empty($value)): ?>
-              <li><a href="<?=$url?>"><?=$this->escapeHtml($value)?></a></li>
-            <? else: $i--; ?>
-            <? endif; ?>
-          <? endforeach; ?>
-        <? endif; ?>
-        </ul>
-      </div>
-    </div>
-  <? endforeach; ?>
+<div class="resources">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 animated fadeInLeft">
+				<h3>¿Qué es el buscador regional?</h3>
+				<p>Bienvenidos al Recolector regional de publicaciones cinetíficas
+					LA REFERENCIA. Integramos el material de los repositorios de nueve
+					países de América Latina. Argentina, Brasil, Chile, Colombia,
+					Ecuador, EL Salvador, México,Perú,Venezuela.</p>
+			</div>
+			<div class="col-md-3 btn-resources animated fadeInRight">
+				<a href="#" class="btn-u"><i class="search fa fa-search search-btn"></i>
+					Recursos de la colección</a>
+			</div>
+		</div>
+	</div>
 </div>
-<? endif; ?>
+
+<div class="container content">
+	<!-- Service Blocks -->
+	<div class="row margin-bottom-30">
+		<div class="col-md-4">
+			<div class="service">
+				<i class="fa fa-compress service-icon"></i>
+				<div class="desc">
+					<h4>Algo I</h4>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+						tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+						fermentum massa justo sit amet risus etiam sem...</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="service">
+				<i class="fa fa-cogs service-icon"></i>
+				<div class="desc">
+					<h4>Estadísticas</h4>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+						tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+						fermentum massa justo sit amet risus etiam sem...</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="service">
+				<i class="fa fa-rocket service-icon"></i>
+				<div class="desc">
+					<h4>Algo II</h4>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+						tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+						fermentum massa justo sit amet risus etiam sem...</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- News -->
+	<div class="headline">
+		<h2>Noticias recientes</h2>
+	</div>
+	<div class="row margin-bottom-20">
+		<div class="col-md-4 col-sm-8">
+			<div class="thumbnails thumbnail-style thumbnail-kenburn">
+				<div class="thumbnail-img">
+					<div class="overflow-hidden">
+						<img class="img-responsive" src="news/alicia.jpg" alt="">
+					</div>
+					<a class="btn-more hover-effect" href="#">read more +</a>
+				</div>
+				<div class="caption">
+					<h3>
+						<a class="hover-effect" href="#">The Semantic Web Reached LA
+							referencia</a>
+					</h3>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+						justo sit amet risus etiam porta sem.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-8">
+			<div class="thumbnails thumbnail-style thumbnail-kenburn">
+				<div class="thumbnail-img">
+					<div class="overflow-hidden">
+						<img class="img-responsive" src="<?=$this->imageLink('news/alicia.jpg')?>" alt="">
+					</div>
+					<a class="btn-more hover-effect" href="#">read more +</a>
+				</div>
+				<div class="caption">
+					<h3>
+						<a class="hover-effect" href="#">Perú lanza nueva versión de nodo
+							nacional</a>
+					</h3>
+					<p>Perú anunció el lanzamiento de la versión actualizada del nodo
+						nacional peruano ALICIA en el cual se centraliza la producción.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-8">
+			<div class="thumbnails thumbnail-style thumbnail-kenburn">
+				<div class="thumbnail-img">
+					<div class="overflow-hidden">
+						<img class="img-responsive" src="<?=$this->imageLink('news/bandera.jpg')?>" alt="">
+					</div>
+					<a class="btn-more hover-effect" href="#">read more +</a>
+				</div>
+				<div class="caption">
+					<h3>
+						<a class="hover-effect" href="#">Argentina: apuntando a una nueva
+							cultura abierta y compartida</a>
+					</h3>
+					<p>A nueve meses de haber elevado una legislación nacinoal sobre
+						repositorios digitales institucinoales</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End News -->
+
+
+
+	<!-- Sponsors-->
+	<div class="container partners">
+		<div class="headline">
+			<h2>Nuestros socios</h2>
+		</div>
+		<div class="row">
+			<ul>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/oasis-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/oasis.jpg')?>" alt="">
+				  </a>
+				</li>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/redicces-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/redicces.jpg')?>" alt="">
+				  </a>
+				</li>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/snrd-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/snrd.jpg')?>" alt="">
+				  </a>
+				</li>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/senescyt-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/senescyt.jpg')?>" alt="">
+				  </a>
+				</li>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/sic-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/sic.jpg')?>" alt="">
+				  </a>
+				</li>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/alicia-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/alicia.jpg')?>" alt="">
+				  </a>
+				</li>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/remeri-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/remeri.jpg')?>" alt="">
+				  </a>
+				</li>
+				<li class="partner">
+				  <a href="#">
+				    <img src="<?=$this->imageLink('partners/bdcol-bw.jpg')?>" alt=""> 
+				    <img class="partner-color" src="<?=$this->imageLink('partners/bdcol.jpg')?>" alt="">
+				  </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- End Sponsors -->
+</div>
+
+

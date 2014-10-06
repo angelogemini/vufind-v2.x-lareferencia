@@ -2550,6 +2550,14 @@ img.img-circle {
 
 /*Spaces
 ------------------------------------*/
+.no-padding{
+	padding:0px;
+}
+
+.padding-bottom-20{
+	padding-bottom:20px;
+}
+
 .margin-left-5 { margin-left: 5px;}
 .margin-right-5 { margin-right: 5px;}
 
