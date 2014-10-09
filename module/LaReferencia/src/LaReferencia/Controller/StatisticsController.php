@@ -48,7 +48,7 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     {
        
         $view = $this->createViewModel();
-        $view->setTemplate('lareferencia/stats/clicks');
+        $view->setTemplate('lareferencia/clicks');
         $config = $this->getConfig();
 
 		$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');   
@@ -71,7 +71,7 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     	 
     	 
     	$view = $this->createViewModel();
-    	$view->setTemplate('lareferencia/stats/count');
+    	$view->setTemplate('lareferencia/count');
     	$config = $this->getConfig();
     
     	$solrStats = $this->getServiceLocator()->get('LaReferencia\SolrStats');
@@ -92,7 +92,7 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     {
     	
     	$view = $this->createViewModel();
-    	$view->setTemplate('lareferencia/stats/networks');
+    	$view->setTemplate('lareferencia/networks');
     	$config = $this->getConfig();
     
     	$lrbStats = $this->getServiceLocator()->get('LaReferencia\LRBackendStats');
