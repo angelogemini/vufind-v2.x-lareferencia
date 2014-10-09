@@ -573,7 +573,7 @@ $config = array(
             ),
             'VuFind\RecordDriver\SolrDefault' => array(
                 'tabs' => array (
-                    'Holdings' => 'HoldingsILS', 'Description' => 'Description',
+                    /*'Holdings' => 'HoldingsILS', */'Description' => 'Description',
                     'TOC' => 'TOC', 'UserComments' => 'UserComments',
                     'Reviews' => 'Reviews', 'Excerpt' => 'Excerpt',
                     'HierarchyTree' => 'HierarchyTree', 'Map' => 'Map',
