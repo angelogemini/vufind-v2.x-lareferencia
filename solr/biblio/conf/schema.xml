@@ -102,7 +102,7 @@
  <!-- CAMBIOS LAREFERENCIA -->
    <field name="oai_identifier" type="string" indexed="true" stored="true"/>
 
-   <field name="type" type="string" indexed="true" stored="true"/>
+   <field name="type" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="status" type="string" indexed="true" stored="true"/>
    <field name="rights" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="eu_rights" type="string" indexed="true" stored="true" multiValued="true"/>
