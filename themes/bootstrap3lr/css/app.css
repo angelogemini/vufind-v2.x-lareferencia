@@ -43,10 +43,13 @@
 
 /*Reset Styles
 ------------------------------------*/
+* {
+   border-radius: 0;
+}
 
 body { 
    color: #333; 
-   font-size: 13px;
+   font-size: 14px;
    line-height: 1.6;
    font-family: 'dosisregular';
 }
@@ -58,7 +61,7 @@ li a {
 }
 
 a {
-   color: #72c02c;
+   color: #00a5e3;
    text-decoration: none;  
 }
 
@@ -72,7 +75,7 @@ a:focus {
   text-decoration: none;
 }
 a:hover {
-   color: #72c02c;
+   color: #00a5e3;
    text-decoration: underline;
 }
 
@@ -122,7 +125,7 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
 /*Block Headline*/
 .headline {
   display: block;
-  margin: 10px 0 25px 0;
+  margin: 10px 0px 25px 15px;
   border-bottom: 1px dotted #e4e9f0;
 }
 
@@ -498,8 +501,8 @@ h3.heading-xs {
 
 .pagination li a:hover {
    color: #fff;
-   background: #5fb611;
-   border-color: #5fb611;   
+   border-color: #00A5E3;
+   background-color: #00A5E3; 
 }
 
 .pagination > .active > a, 
@@ -508,8 +511,8 @@ h3.heading-xs {
 .pagination > .active > span:hover, 
 .pagination > .active > a:focus, 
 .pagination > .active > span:focus {
-   border-color: #72c02c;
-   background-color: #72c02c;
+   border-color: #00A5E3;
+   background-color: #00A5E3;
 }
 
 /*Pagination Without Space*/
@@ -521,8 +524,8 @@ h3.heading-xs {
 .pager li > a:hover, 
 .pager li > a:focus {
    color: #fff;
-   background: #5fb611;
-   border-color: #5fb611;   
+   border-color: #00A5E3;
+   background-color: #00A5E3;  
 }
 
 /*Sidebar Menu
@@ -661,6 +664,10 @@ a.btn-u-xs {
    font-size: 12px;
    padding: 2px 12px;   
    line-height: 18px;
+}
+
+.btn-primary{
+	border:none;
 }
 
 /*Button Groups*/
@@ -1102,98 +1109,10 @@ a.btn-u-xs {
 /*Badges and Labels
 ------------------------------------*/
 /*Labels*/
-span.label {
-  font-size: 11px;
-  font-weight: 400;
-  padding: 4px 7px;
-}
-
-/*Badges*/
-span.badge {
-  font-weight: 400;
-  padding: 4px 7px;  
-}
-
-span.label-u,
-span.badge-u {
-  background: #72c02c;
-}
-
-span.label-blue,
-span.badge-blue {
-  background: #3498db;
-}
-
-span.label-red,
-span.badge-red {
-  background: #e74c3c;
-}
-
-span.label-green,
-span.badge-green {
-  background: #2ecc71;
-}
-
-span.label-sea,
-span.badge-sea {
-  background: #1abc9c;
-}
-
-span.label-orange,
-span.badge-orange {
-  background: #e67e22;
-}
-
-span.label-yellow,
-span.badge-yellow {
-  background: #f1c40f;
-}
-
-span.label-purple,
-span.badge-purple {
-  background: #9b6bcc;
-}
-
-span.label-aqua,
-span.badge-aqua {
-  background: #27d7e7;
-}
-
-span.label-brown,
-span.badge-brown {
-  background: #9c8061;
-}
-
-span.label-dark-blue,
-span.badge-dark-blue {
-  background: #4765a0;
-}
-
-span.label-light-green,
-span.badge-light-green {
-  background: #79d5b3;
-}
-
-span.label-light,
-span.badge-light {
-  color: #777;
-  background: #ecf0f1;
-}
-
-span.label-dark,
-span.badge-dark {
-  background: #555;
-}
-
-/*Badge Lists*/
-.badge-lists li {
-  position: relative;
-}
-
-.badge-lists span.badge {
-  top: -10px;
-  right: -6px;
-  position: absolute;
+.label-info{
+	background: #80A9B2;
+	font-weight:normal;
+	font-size:12px;
 }
 
 /*Badge Icons*/
@@ -2556,6 +2475,8 @@ img.img-circle {
 }
 
 .margin-left-5 { margin-left: 5px;}
+.margin-left-10 { margin-left: 5px;}
+
 .margin-right-5 { margin-right: 5px;}
 
 .no-top-space {
@@ -2637,8 +2558,12 @@ img.img-circle {
   }
 }
 
-/*Text Colors
+/*Text
 ------------------------------------*/
+.strong{
+	font-family: 'dosismedium';	
+}
+
 .color-sea { color: #1abc9c;}
 .color-red { color: #e74c3c;}
 .color-aqua { color: #27d7e7;}
@@ -2722,12 +2647,15 @@ img.img-circle {
 
 /*Misc*/
 .content {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding:40px 80px 40px 50px;
 }
 
 .text-justify p {
    text-align: justify;
+}
+
+.text-right{
+	text-align:right;
 }
 
 /*Background Light*/

@@ -63,6 +63,7 @@
       }
     ?>
     <?=$this->headScript()?>
+    <? $location="home" ?>
   </head>
   <body class="boxed-layout container">
 	<div class="wrapper">
@@ -73,7 +74,10 @@
 	      // Set up default search box if no data was provided from the template;
 	      // this covers case 1.  Cases 2 and 3 are then covered by logic below.
 	      if (!isset($this->layout()->searchbox)) {
-	        $this->layout()->searchbox = $this->render('search/searchbox.phtml');
+	        $this->layout()->searchbox = $this->render('search/searchbox.phtml');	        
+	      }
+	      if($this->layout ()->searchbox ==true){
+				$location="no-home";	      	
 	      }
 	    ?>
 	    <header role="banner" class="hidden-print">
@@ -81,11 +85,12 @@
 	        <a class="sr-only" href="#content"><?=$this->transEsc('Skip to content') ?></a>
 	        <?=$this->render('header.phtml')?>
 	      </div>
-	      <div class="container">
+	      <div class="container searchbox-container">
 	        <nav class="nav searchbox hidden-lg hidden-print">
 	          <?=$this->layout()->searchbox ?>
 	        </nav>
-	        <? if((!isset($this->layout()->showBreadcrumbs) || $this->layout()->showBreadcrumbs == true)
+	      </div>
+	      <? if((!isset($this->layout()->showBreadcrumbs) || $this->layout()->showBreadcrumbs == true)
 	          && !empty($this->layout()->breadcrumbs)
 	          && $this->layout()->breadcrumbs !== false
 	        ): ?>
@@ -108,10 +113,9 @@
 	            <?=$this->layout()->breadcrumbs ?>
 	          <? endif; ?>
 	          </ul>
-	        <? endif; ?>
-	      </div>
+	        <? endif; ?>  	      
 	    </header>
-	    <div role="main" class="main">
+	    <div role="main" class="main <?=$location ?>">
 	      <div class="container">
 	        <div class="row">
 	          <?=$this->layout()->content?>

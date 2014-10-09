@@ -14,10 +14,17 @@ $advSearch = $options->getAdvancedSearchAction ();
 $lastSort = $options->getLastSort ();
 $lastLimit = $options->getLastLimit ();
 ?>
-
+<div class="col-md-6" id="search-legend">
+	<div id="red">
+		<h2>RED FEDERADA DE REPOSITORIOS INSTITUCIONALES &nbsp; <span>DE PUBLICACIONES CIENTÍFICAS</span></h2>
+	</div>
+	<div id="repo">
+		<h3>Integramos el material de los repositorios &nbsp;<br><span>de nueve países de América Latina<span></h3>
+	</div>
+</div>
 <div class="col-md-6">
 	<div id="search-home">
-		<h1><img src="<?=$this->imageLink('arrow.png') ?>">BÚSQUEDA</h1>
+		<img class="arrow" src="<?=$this->imageLink('arrow.png') ?>"><h1>BÚSQUEDA</h1>
 		<form role="search" class="form-inline" method="get" action="<?=$this->url($basicSearch)?>" name="searchForm" id="searchForm" autocomplete="off">
 			
 			<div class="form-group padding-bottom-20">	
@@ -43,7 +50,7 @@ $lastLimit = $options->getLastLimit ();
 			 
 			 <div class="form-group"> 
 			 	 <? if ($advSearch): ?>
-			      <a href="<?=$this->url($advSearch)?>" class="btn btn-link" id="advance-search"><i class="fa fa-search"></i><?=$this->transEsc("Advanced Search")?></a>
+			      <a href="<?=$this->url($advSearch)?>" class="btn btn-link" id="advance-search"><i class="fa fa-search-plus"></i> <?=$this->transEsc("Advanced Search")?></a>
 			    <? endif; ?>
 			   	    
 			    <button type="submit" class="btn btn-primary" id="submit-home">
@@ -55,15 +62,6 @@ $lastLimit = $options->getLastLimit ();
 		
 		<script type="text/javascript">$("#searchForm_lookfor").focus()</script>
 		
-	</div>
-</div>
-	
-<div class="col-md-6" id="search-legend">
-	<div id="red">
-		<h2>RED FEDERADA DE REPOSITORIOS INSTITUCIONALES &nbsp; <span>DE PUBLICACIONES CIENTÍFICAS</span></h2>
-	</div>
-	<div id="repo">
-		<h3>Integramos el material de los repositorios &nbsp;<br><span>de nueve países de América Latina<span></h3>
 	</div>
 </div>
 

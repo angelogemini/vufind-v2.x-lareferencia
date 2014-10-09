@@ -10,7 +10,8 @@ return array(
         'vendor/bootstrap-slider.css',
         'print.css:print',
     	'app.css',
-    	'style.css'
+    	'style.css',
+    	'inside.css'
     ),
     'js' => array(
         'vendor/jquery.min.js',

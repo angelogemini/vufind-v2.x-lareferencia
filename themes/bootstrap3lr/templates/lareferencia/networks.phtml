@@ -15,7 +15,7 @@
 ?>
 
 
-<div class="<?=$this->layoutClass('widebody')?>">
+<div class="<?=$this->layoutClass('mainbody')?>">
   <!--h2><?=$this->transEsc('Statistics')?></h2-->
   
    <?=json_encode($this->harvestingHistory) ?>
@@ -108,6 +108,7 @@ $('#clicks-datatable').dataTable( {
 
 </script>
 
-<!--  div class="<?=$this->layoutClass('sidebar')?>">
-  <?=$this->render("admin/menu.phtml")?>
-</div-->
+
+<div class="<?=$this->layoutClass('sidebar')?>">
+  <?=$this->render("lareferencia/menu.phtml")?>
+</div>
