@@ -15,8 +15,9 @@
   <input type="hidden" value="<?=$id ?>" class="hiddenId"/>
   <div class="col-xs-2 left">
     <a href="<?=$this->recordLink()->getUrl($this->driver)?>">
-      <? if ($summThumb = $this->record($this->driver)->getThumbnail()): ?>
-        <img src="<?=$this->escapeHtmlAttr($summThumb)?>" alt="<?=$this->transEsc('Cover Image')?>"/>
+      <? if ($summThumb = $this->record($this->driver)->getThumbnail()): ?>    
+      	<!--img src="<?=$this->escapeHtmlAttr($summThumb)?>" alt="<?=$this->transEsc('Cover Image')?>"/-->	
+        <img src="<?=$this->imageLink($summThumb)?>" alt="<?=$this->transEsc('Cover Image')?>"/>
       <? else: ?>
         <img src="<?=$this->url('cover-unavailable')?>" alt="<?=$this->transEsc('No Cover Image')?>"/>
       <? endif; ?>

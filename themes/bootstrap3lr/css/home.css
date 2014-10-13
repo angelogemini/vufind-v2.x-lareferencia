@@ -64,16 +64,6 @@
 	width:100px;
 }
 
-#submit-home:hover{
-	color:#fff;
-	background-color:#003444;
-	-webkit-transition: background-color 1000ms linear;
-    -moz-transition: background-color 1000ms linear;
-    -o-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
-}
-
 
 #advance-search{
 	background-color:#00a5e3;
@@ -131,7 +121,7 @@
 
 
 /*Responsive search home*/
-@media (max-width: 767px){
+@media (max-width: 1000px){
 	
 	#search-home{
 		height:270px;

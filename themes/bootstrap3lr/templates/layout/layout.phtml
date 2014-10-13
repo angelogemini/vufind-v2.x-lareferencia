@@ -63,9 +63,15 @@
       }
     ?>
     <?=$this->headScript()?>
-    <? $location="home" ?>
+    <? 
+    	$location="home";
+	 	if(strtolower($this->layout()->templateName) !== "home"){
+			$location="no-home";	      	
+      	}    
+    ?>
+    
   </head>
-  <body class="boxed-layout container">
+  <body class="boxed-layout container <?=$location ?>">
 	<div class="wrapper">
   		<? // Set up the search box -- there are three possible cases:
 	      // 1. No search box was set; we should default to the normal box
@@ -75,9 +81,6 @@
 	      // this covers case 1.  Cases 2 and 3 are then covered by logic below.
 	      if (!isset($this->layout()->searchbox)) {
 	        $this->layout()->searchbox = $this->render('search/searchbox.phtml');	        
-	      }
-	      if($this->layout ()->searchbox ==true){
-				$location="no-home";	      	
 	      }
 	    ?>
 	    <header role="banner" class="hidden-print">
@@ -115,7 +118,7 @@
 	          </ul>
 	        <? endif; ?>  	      
 	    </header>
-	    <div role="main" class="main <?=$location ?>">
+	    <div role="main" class="main">
 	      <div class="container">
 	        <div class="row">
 	          <?=$this->layout()->content?>

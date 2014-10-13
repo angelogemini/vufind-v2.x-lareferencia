@@ -60,161 +60,23 @@ $this->layout ()->breadcrumbs = false;
 </div>
 
 <div class="container content">
-
-	<!-- Service Blocks -->
 	<div class="row margin-bottom-30">
-		<div class="col-md-4">
-			<div class="service">
-				<i class="fa fa-file-text service-icon"></i>
-				<div class="desc">
-					<h4>Información para gestores</h4>
-					<p>Gracias a acuerdos técnicos y organizativos, LA Referencia ha ido integrando progresivamente los nodos nacionales de los países que la conforman, a una plataforma que cuenta.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="service">
-				<i class="fa fa-bar-chart-o service-icon"></i>
-				<div class="desc">
-					<h4>Estadísticas</h4>
-					<p>Gracias a acuerdos técnicos y organizativos, LA Referencia ha ido integrando progresivamente los nodos nacionales de los países que la conforman, a una plataforma que cuenta.</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="service">
-				<i class="fa fa-files-o service-icon"></i>			
-				<div class="desc">
-					<h4>Proyectos</h4>
-					<p>Gracias a acuerdos técnicos y organizativos, LA Referencia ha ido integrando progresivamente los nodos nacionales de los países que la conforman, a una plataforma que cuenta.</p>
-				</div>
-			</div>
-		</div>
+		<?=$this->render("servicies.phtml")?>
 	</div>
-	<!-- end services block -->
 
-	<!-- News -->
 	<div class="headline">
 		<h2>Noticias recientes</h2>
 	</div>
 	<div class="row margin-bottom-20">
-		<div class="col-md-4 col-sm-12">
-			<div class="thumbnails thumbnail-style thumbnail-kenburn">
-				<div class="thumbnail-img col-md-12 col-sm-6">
-					<div class="overflow-hidden">
-						<img class="img-responsive" src="<?=$this->imageLink('news/alicia.jpg')?>" alt="" />
-					</div>
-					<a class="btn-more hover-effect" href="#">+ <?=$this->transEsc("read more")?></a>
-				</div>
-				<div class="caption col-md-12 col-sm-6">
-					<h3>
-						<a class="hover-effect" href="#">The Semantic Web Reached LA
-							referencia</a>
-					</h3>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-						justo sit amet risus etiam porta sem.</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-12">
-			<div class="thumbnails thumbnail-style thumbnail-kenburn ">
-				<div class="thumbnail-img col-md-12 col-sm-6">
-					<div class="overflow-hidden">
-						<img class="img-responsive" src="<?=$this->imageLink('news/alicia.jpg')?>" alt=""/>
-					</div>
-					<a class="btn-more hover-effect" href="#">+ <?=$this->transEsc("read more")?></a>
-				</div>
-				<div class="caption col-md-12 col-sm-6">
-					<h3>
-						<a class="hover-effect" href="#">Perú lanza nueva versión de nodo
-							nacional</a>
-					</h3>
-					<p>Perú anunció el lanzamiento de la versión actualizada del nodo
-						nacional peruano ALICIA en el cual se centraliza la producción.</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-12">
-			<div class="thumbnails thumbnail-style thumbnail-kenburn ">
-				<div class="thumbnail-img col-md-12 col-sm-6">
-					<div class="overflow-hidden">
-						<img class="img-responsive" src="<?=$this->imageLink('news/bandera.jpg')?>" alt="" />
-					</div>
-					<a class="btn-more hover-effect" href="#">+ <?=$this->transEsc("read more")?></a>
-				</div>
-				<div class="caption col-md-12 col-sm-6">
-					<h3>
-						<a class="hover-effect" href="#">Argentina: apuntando a una nueva cultura abierta y compartida</a>
-					</h3>
-					<p>A nueve meses de haber elevado una legislación nacional sobre repositorios digitales institucionales...</p>
-				</div>
-			</div>
-		</div>
+		<?=$this->render("news.phtml")?>
 	</div>
-	<!-- End News -->
-
-
-
-	<!-- Sponsors-->
+	
 	<div class="partners">
 		<div class="headline">
 			<h2>Nuestros socios</h2>
 		</div>
 		<div class="row">
-			<ul>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/oasis-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/oasis.jpg')?>" alt="">
-				  </a>
-				</li>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/redicces-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/redicces.jpg')?>" alt="">
-				  </a>
-				</li>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/snrd-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/snrd.jpg')?>" alt="">
-				  </a>
-				</li>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/senescyt-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/senescyt.jpg')?>" alt="">
-				  </a>
-				</li>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/sic-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/sic.jpg')?>" alt="">
-				  </a>
-				</li>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/alicia-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/alicia.jpg')?>" alt="">
-				  </a>
-				</li>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/remeri-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/remeri.jpg')?>" alt="">
-				  </a>
-				</li>
-				<li class="partner">
-				  <a href="#">
-				    <img src="<?=$this->imageLink('partners/bdcol-bw.jpg')?>" alt=""> 
-				    <img class="partner-color" src="<?=$this->imageLink('partners/bdcol.jpg')?>" alt="">
-				  </a>
-				</li>
-			</ul>
+			<?=$this->render("partners.phtml")?>
 		</div>
 	</div>
-	<!-- End Sponsors -->
 </div>
-
-
