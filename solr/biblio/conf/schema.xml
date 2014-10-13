@@ -103,8 +103,9 @@
    <field name="oai_identifier" type="string" indexed="true" stored="true"/>
 
    <field name="type" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="language_invalid" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="status" type="string" indexed="true" stored="true"/>
-   <field name="rights" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="rights_invalid" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="eu_rights" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="identifier" type="string" indexed="true" stored="true" multiValued="true"/>  
  
