@@ -79,7 +79,17 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     	$fieldsArray = array( $field );
     	$view->data = $solrStats->getFieldsCountPerNetwork($fieldsArray, $limit);
     	$view->field = $field;
-    
+    	 
+     	
+    	/** Creación del diccionario de traducción de valores **/
+    	 
+    	$tmpArray = array();
+    	foreach ($view->data["fields"][$field]["values"] as $value) {
+    		array_push($tmpArray, $value["label"]);
+    	}
+    	
+    	$view->fieldvalues = $tmpArray;
+    	 
     	return $view;
     }
     

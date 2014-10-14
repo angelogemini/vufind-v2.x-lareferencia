@@ -17,19 +17,18 @@
 
 
 <div class="<?=$this->layoutClass('mainbody')?>">
-  <!--h2><?=$this->transEsc('Statistics')?></h2-->
 
+   <div class="row"><br/></div>
+   
+   <h2><?=$this->transEsc('Document count')?> <?=$this->transEsc('by')?> <?=$this->transEsc( $this->field.'_fieldname')?></h2>
 
-	
-   <h2>Cantidad de documentos por tipo de documento</h2>
-
-   <div class="row"><br/><br/></div>
+   <div class="row"><br/></div>
    
    <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Total Colección</h3>
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Total</h3>
                             </div>
                         <div class="panel-body">
                             <div id="main-donut-chart"></div>
@@ -67,7 +66,7 @@
                          <div class="panel-body">
 			    				<div id="<?=$network?>-donut-chart"></div>
                                 <div class="text-right">
-                            	<a href="#">Ver registros <i class="fa fa-arrow-circle-right"></i></a>
+                            	<a href="/vufind/Search/Results?lookfor=network_name%3A<?=$network?>&type=AllFields">Ver registros <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                          </div>
                          <!-- /.panel-body -->
@@ -88,35 +87,64 @@
 </div>
 
 
+
+
+
 <script type="text/javascript">
 
-var rawJson =  <?=json_encode($this->data) ?>;
-var data = rawJson["fields"][<?=json_encode($this->field) ?>].values;
-var sources = {};
+var alldata =  <?=json_encode($this->data) ?>;
+
+// este diccionario funciona como traductor
+<? $transValues = array(); ?>	
+<?foreach ($this->fieldvalues as $value):?>
+	<?$transValues[$value] = $this->transEsc($value); ?>
+<?endforeach;?>
+var translator = <?=json_encode($transValues); ?>
+
+// main chart
+var data = alldata["fields"][<?=json_encode($this->field)?>].values;
+
+// traducción de los valores
+var transData = [];
+$.each( data, function( index, value ) {
+	value["label"] = translator[ value["label"] ];
+	transData.push( value );
+});
 
 Morris.Donut({
     element: 'main-donut-chart',
-    data: data,
+    data: transData,
     resize: true
 });
 
+
+// Datatable
 var columns = [];
-columns.push({ 'data':'label', 'title':'Tipo de documento' });
-columns.push({ 'data':'value', 'title':'Cantidad de registros' });
+columns.push({ 'data':'label', 'title':'<?=$this->transEsc($this->field.'_fieldname')?>' });
+columns.push({ 'data':'value', 'title':'<?=$this->transEsc('Document count')?>' });
 
 $('#main-datatable').dataTable( {
     data: data,
     columns: columns,
     bFilter: false, 
     bInfo: false,
-    bPaginate: false
+    bPaginate: false,
+    order: [[ 1, "desc" ]]
 } );   
 
-$.each( rawJson["pivots"], function( network, pivot ) {
+// By Network itetation
+$.each( alldata["pivots"], function( network, pivot ) {
+
+	// Traducción de los valores
+	transPivot = [];
+	$.each( pivot.values, function( index, value ) {
+		value["label"] = translator[ value["label"] ];
+		transPivot.push( value );
+	});
 
 	Morris.Donut({
 	    element: network + '-donut-chart',
-	    data: pivot.values,
+	    data: transPivot,
 	    resize: true
 	});	
 });
