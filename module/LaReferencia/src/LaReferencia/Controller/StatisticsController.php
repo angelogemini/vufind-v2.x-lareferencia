@@ -66,7 +66,7 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     public function countAction()
     {
     	
-    	$field = $this->params()->fromQuery('field', 'type');
+    	$field = $this->params()->fromQuery('field', 'format');
     	$limit = $this->params()->fromQuery('limit', -1);
     	 
     	 
@@ -108,10 +108,29 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     	$lrbStats = $this->getServiceLocator()->get('LaReferencia\LRBackendStats');
     
     	$view->data = $lrbStats->getNetworkList();
-    	$view->harvestingHistory = $lrbStats->getHarvestingHistory();
     
     	return $view;
     }
+    
+    /**
+     * Statistics reporting
+     *
+     * @return \Zend\View\Model\ViewModel
+     */
+    public function historyAction()
+    {
+    	 
+    	$view = $this->createViewModel();
+    	$view->setTemplate('lareferencia/history');
+    	$config = $this->getConfig();
+    
+    	$lrbStats = $this->getServiceLocator()->get('LaReferencia\LRBackendStats');
+    
+    	$view->data = $lrbStats->getHarvestingHistory();
+    
+    	return $view;
+    }
+    
     
 }
 

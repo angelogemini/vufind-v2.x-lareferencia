@@ -16,32 +16,18 @@
 
 
 <div class="<?=$this->layoutClass('mainbody')?>">
-  <!--h2><?=$this->transEsc('Statistics')?></h2-->
-  
+
+   <div class="row"><br/></div>
+   
+   <h2><?=$this->transEsc('Record access by network')?></h2>
+
+   <div class="row"><br/></div>
+
    <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4>Acceso a registros por red (mensual)</h4><!--i class="fa fa-bar-chart-o fa-fw"></i--> 
-                            <!--div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        Actions
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#">Action</a>
-                                        </li>
-                                        <li><a href="#">Another action</a>
-                                        </li>
-                                        <li><a href="#">Something else here</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div-->
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>Total</h3>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -55,8 +41,8 @@
                             </div>
 			    <div class="row"><br/><br/></div>
                             <div class="well">
-                                <h4>Sobre las estadísticas de acceso a registros</h4>
-                                <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
+                                <h4><?=$this->transEsc('About record access statistics')?></h4>
+                                <p><?=$this->transEsc('about_record_access_statistics_text')?></p>
                             </div>
 
                         </div>

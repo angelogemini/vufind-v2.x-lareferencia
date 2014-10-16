@@ -55,6 +55,10 @@ class LRBackendStats
     const TRANSFORMED_TAG = "transformedSize";
     const TOTAL_TAG = "size";
     const NAME_TAG = "name";
+    const ACRONYM_TAG = "acronym";
+    const DATESTAMP_TAG = "datestamp";
+    
+    
     
     
     /**
@@ -86,12 +90,15 @@ class LRBackendStats
     	
     	foreach ($networksInfoArray as $networkInfo) {
 	
+    		
     		$aggrInfo[self::TOTAL_TAG] = $aggrInfo[self::TOTAL_TAG] + $networkInfo[self::TOTAL_TAG];	
     		$aggrInfo[self::TRANSFORMED_TAG] = $aggrInfo[self::TRANSFORMED_TAG] + $networkInfo[self::TRANSFORMED_TAG];
     		$aggrInfo[self::VALID_TAG] = $aggrInfo[self::VALID_TAG] + $networkInfo[self::VALID_TAG];
     		
     		
     		array_push($networks, array(
+    				self::ACRONYM_TAG		  => $networkInfo[ self::ACRONYM_TAG ],	
+    				self::DATESTAMP_TAG		  => $networkInfo[ self::DATESTAMP_TAG ],				
     				self::NAME_TAG		  => $networkInfo[ self::NAME_TAG ],
     				self::VALID_TAG 	  => $networkInfo[self::VALID_TAG], 
     				self::TRANSFORMED_TAG => $networkInfo[self::TRANSFORMED_TAG], 
@@ -117,7 +124,7 @@ class LRBackendStats
     
     public function getHarvestingHistory()
     { 
-    	return $this->callJSONService( "http://localhost:8090/public/listValidPublicSnapshotsStats" );
+    	return $this->callJSONService( "http://localhost:8090/public/listNetworksHistory" );
     }
          
 
