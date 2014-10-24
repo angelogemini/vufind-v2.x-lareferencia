@@ -44,32 +44,17 @@ $this->layout ()->breadcrumbs = false;
 
 <div class="resources">
 	<div class="container">
-		<div class="row">
-			<div id="wht-bwsr" class="col-md-8">
-				<h3>¿Qué es el buscador regional?</h3>
-				<p>
-					Gracias a acuerdos técnicos y organizativos, LA Referencia ha ido integrando progresivamente los nodos nacionales de los países que la conforman, a una plataforma que cuenta con los estándares internacionales de interoperabilidad. Integra tanto artículos científicos provenientes de casi un centenar de universidades de América Latina, como material de interés de investigaciones académicas reflejadas en tesis doctorales y de maestría, en una amplia variedad de opciones temáticas.
-				</p>
-			</div>
-			<div id="explr-cat" class="col-md-4 btn-resources">
-				<a href="#" class="btn-u"><i class="search fa fa-folder-open search-btn"></i>
-					Explorar catálogo</a>
-			</div>
-		</div>
+		<?=$this->render("home/reg-brws/reg-brws-".$this->layout()->userLang.".phtml")?>
 	</div>
 </div>
 
 <div class="container content">
-	<div class="row margin-bottom-30">
-		<?=$this->render("servicies.phtml")?>
-	</div>
+	
+	<?=$this->render("home/servicies/servicies-".$this->layout()->userLang.".phtml")?>	
 
-	<div class="headline">
-		<h2>Noticias recientes</h2>
-	</div>
-	<div class="row margin-bottom-20">
-		<?=$this->render("news.phtml")?>
-	</div>
+
+	<?=$this->render("home/news/news-".$this->layout()->userLang.".phtml")?>
+	
 	
 	<div class="partners">
 		<div class="headline">
@@ -77,6 +62,18 @@ $this->layout ()->breadcrumbs = false;
 		</div>
 		<div class="row">
 			<?=$this->render("partners.phtml")?>
+		</div>
+	</div>
+	
+	<div class="partners">
+		<div class="headline">
+			<h2>
+			Nodos cosechados			
+			</h2>
+			
+		</div>
+		<div class="row">
+			<?=$this->render("nodes.phtml")?>
 		</div>
 	</div>
 </div>

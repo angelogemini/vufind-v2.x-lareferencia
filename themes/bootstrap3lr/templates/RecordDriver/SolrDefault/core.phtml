@@ -7,14 +7,23 @@
 	 <div class="row">
 	    <div class="text-center col-md-2">
 	      <? /* Display thumbnail if appropriate: */ ?>
-	      <? $mediumThumb = $this->record($this->driver)->getThumbnail('medium'); $largeThumb = $this->record($this->driver)->getThumbnail('large'); ?>
+	      <? $mediumThumb = $this->record($this->driver)->getThumbnail('medium'); 
+	         $largeThumb  = $this->record($this->driver)->getThumbnail('large'); ?>
 	      <? if ($mediumThumb): ?>
 	        <? if ($largeThumb): ?> <!-- a href="<?=$this->escapeHtmlAttr($largeThumb)?>"--><? endif; ?>
 	          <img alt="<?=$this->transEsc('Cover Image')?>" class="recordcover" src="<?=$this->imageLink('covers/'.trim($mediumThumb))?>""/>
 	        <? if ($largeThumb): ?><!--  /a --><? endif; ?>
 	      <? else: ?>
-	        <img src="<?=$this->url('cover-unavailable')?>" class="recordcover" alt="<?=$this->transEsc('No Cover Image')?>"/>
+	        <!--img src="<?=$this->url('cover-unavailable')?>" class="recordcover" alt="<?=$this->transEsc('No Cover Image')?>"/-->	        
+	        <div>
+	          <?=$this->record($this->driver)->getFormatList()?>  	
+	        </div>
 	      <? endif; ?>
+	      	<div>
+	          <?=$this->record($this->driver)->getFormatList()?>  
+	          <?$raw_data= $this->driver->getRawData();?>
+	          <?=$raw_data["network_name"]?>	
+	        </div>
 	
 	      <? /* Display qrcode if appropriate: */ ?>
 	      <? $QRCode = $this->record($this->driver)->getQRCode("core"); ?>

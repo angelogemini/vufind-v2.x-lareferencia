@@ -45,6 +45,12 @@ Search Box
 	top:5px;
 }
 
+.no-home #advanced{
+	background-color:rgba(255, 255, 255, 0.2);
+	padding:4px;
+	margin-left:10px;
+}
+
 /*Responsive Search Box*/
 @media (max-width: 767px){
 	.no-home #searchForm_lookfor, .no-home #searchForm_type{
@@ -147,14 +153,19 @@ One Record ---------------------------*/
 	text-align:center;
 	max-width:600px;
 	margin:20px auto 30px auto;
-	padding:3px;
+	padding:3px inherit;
 	border:1px solid #CCC;
-	border-radius:7px;
+	border-radius:7px;	
+}
+
+.journal-toolbar li{
+	display:inline;
 }
 
 .journal-toolbar li a{
 	padding:0 5px 0 5px;
 	margin:0 7px 0 7px;
+	display:inline-block;
 }
 
 .journal-toolbar .dropdown > a:after,.journal-toolbar .dropdown-submenu > a:after{
