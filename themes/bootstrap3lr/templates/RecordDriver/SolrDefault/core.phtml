@@ -11,7 +11,7 @@
 	         $largeThumb  = $this->record($this->driver)->getThumbnail('large'); ?>
 	      <? if ($mediumThumb): ?>
 	        <? if ($largeThumb): ?> <!-- a href="<?=$this->escapeHtmlAttr($largeThumb)?>"--><? endif; ?>
-	          <img alt="<?=$this->transEsc('Cover Image')?>" class="recordcover" src="<?=$this->imageLink('covers/'.trim($mediumThumb))?>""/>
+	          <//img alt="<?=$this->transEsc('Cover Image')?>" class="recordcover" src="<?=$this->imageLink('covers/'.trim($mediumThumb))?>""/>
 	        <? if ($largeThumb): ?><!--  /a --><? endif; ?>
 	      <? else: ?>
 	        <!--img src="<?=$this->url('cover-unavailable')?>" class="recordcover" alt="<?=$this->transEsc('No Cover Image')?>"/-->	        
@@ -19,10 +19,14 @@
 	          <?=$this->record($this->driver)->getFormatList()?>  	
 	        </div>
 	      <? endif; ?>
-	      	<div>
-	          <?=$this->record($this->driver)->getFormatList()?>  
-	          <?$raw_data= $this->driver->getRawData();?>
-	          <?=$raw_data["network_name"]?>	
+	      	<div class="thumb">
+	      	  <div class="ntwrk-name">
+		      	<?$raw_data= $this->driver->getRawData();?>
+		        <?=$raw_data["network_name"]?>	
+	      	  </div>
+	      	  <div class="format">
+	            <?=$this->record($this->driver)->getFormatList()?>
+	          </div> 	          	
 	        </div>
 	
 	      <? /* Display qrcode if appropriate: */ ?>
