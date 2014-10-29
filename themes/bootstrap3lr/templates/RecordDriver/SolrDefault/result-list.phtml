@@ -9,17 +9,8 @@
         <img class="recordcover" src="<?=$this->url('cover-unavailable')?>" alt="<?=$this->transEsc('No Cover Image')?>"/>
       <? endif; ?>
             
-      	<div class="thumb thumb-in-list">
-	       <div class="ntwrk-name">
-		    	<?$raw_data= $this->driver->getRawData();?>
-		        <?=$raw_data["network_name"]?>	
-	        </div>
-	        <div class="format">
-	           <?=$this->record($this->driver)->getFormatList()?>
-	        </div> 	          	
-	    </div>      
-      
-      
+		<!-- Render thumb -->
+		<?=$this->render("RecordDriver/SolrDefault/thumb.phtml")?>     
       
       
     </a>

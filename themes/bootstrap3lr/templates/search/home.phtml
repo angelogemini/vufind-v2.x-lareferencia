@@ -1,4 +1,4 @@
-<?
+ <?
 // Set page title.
 $this->headTitle ( $this->translate ( 'Search Home' ) );
 
@@ -50,10 +50,44 @@ $this->layout ()->breadcrumbs = false;
 		<?=$this->render("home/reg-brws/reg-brws-".$this->layout()->userLang.".phtml")?>
 	</div>
 </div>
+<div class="network-home">
+	<div id="pick-ntwrk">
+		<span class="ntwrk-number">9</span>
+		<span class="ntwrk-txt">Redes nacionales</span>
+	</div>
+	<div id="docs">
+		<span class="ntwrk-number">869 576</span>
+		<span class="ntwrk-txt">Documentos</span>
+	</div>
+	<div id="mix">
+		<table class="table">
+			<tr>
+				<td>
+					<span>433 830</span>
+					<span>Artículos</span>
+				</td>
+				<td>
+					<span>125 116</span>
+					<span>Tesis de Doctorado</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>3 161</span>
+					<span>Reportes</span>
+				</td>
+				<td>
+					<span>315 279</span>
+					<span>Tesis de Maestría</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
 
 <div class="container content">
 	
-	<?=$this->render("home/servicies/servicies-".$this->layout()->userLang.".phtml")?>	
+	<!-- ?=$this->render("home/servicies/servicies-".$this->layout()->userLang.".phtml")? -->	
 
 
 	<?=$this->render("home/news/news-".$this->layout()->userLang.".phtml")?>

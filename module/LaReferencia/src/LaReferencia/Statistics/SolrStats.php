@@ -84,7 +84,6 @@ class SolrStats
     	$response = $this->solrStatsBackend->search($query, 0, 0, $params);
     	
     	return $response->getFacets();
-    
     }
     
     /**
@@ -105,8 +104,8 @@ class SolrStats
     	$params->add('facet.field', "network_name");
     	$params->add('facet.sort', "count");
     	$params->add('facet.limit', $limit);
-    	 
-    	 
+    	$params->add('facet.mincount', 2);
+    	
     	
     	foreach ($fieldsArray as $field) {
     		$params->add('facet.field', $field);
@@ -148,8 +147,4 @@ class SolrStats
     	
     	return $response;
     }
-    
-    
-
-
 }

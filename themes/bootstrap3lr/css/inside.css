@@ -226,6 +226,7 @@ One Record ---------------------------*/
 	width:100px;
 	max-widht:100px;
 	float:left;
+	text-transform:uppercase;
 	background-color:#404041;
 	-webkit-transform: rotate(-90deg);
 	-moz-transform: rotate(-90deg);
@@ -242,15 +243,30 @@ One Record ---------------------------*/
 	position:relative;
 	float:left;
 	left:12px;
-	top:-5px;
+	top:-10px;
 	width:90px;
 	max-widht:100px;	
-	color:#fff;	
-
+	color:#fff;
+	vertical-align:middle;	
+	height:88px;
 }
 
 
 .format span{
 	display:inline-block;
-	line-height:12px;
+	width:50px;
+	line-height:15px;
+	font-family: 'dosismedium';
+	font-size:13px;
+	text-transform:uppercase;
+	text-align:left;
+	margin-top:3px;
+}
+
+.format-misc i{
+	opacity:.5;
+	margin-left:-12px;
+	/*position:absolute;
+	bottom:5px;
+	left:28px;*/
 }

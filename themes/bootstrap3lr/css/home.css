@@ -184,6 +184,7 @@
 
 #wht-bwsr p{
 	line-height:15px;
+	text-align:justify;
 }
 
 
@@ -205,14 +206,139 @@
 	
 	#wht-bwsr{
 		padding:10px;
+		
 	}
 	
 }
 
 
+/*Picked networks*/
+
+.network-home{
+	margin-bottom:80px;
+}
+
+#pick-ntwrk, #docs, #mix{
+	height:73px;	
+	float:left;
+}
+
+#pick-ntwrk, #docs{
+	padding:10px 20px 0px 20px;
+	text-align:center;
+}
+
+#pick-ntwrk{
+	background-color:#004262;
+	width:30%;
+}
+
+#docs{
+	background-color:#035172;
+	width:30%;
+}
+
+#mix{
+	background-color:#559BC2;
+	width:40%;
+}
+
+.ntwrk-number{
+	color:#57A6E2;
+	font-size:30px;
+	font-family: 'dosismedium';
+}
+
+.ntwrk-txt{
+	color:#fff;
+	font-size:23px;
+	padding-left:5px;
+}
+
+#mix table tr:first-child{
+	border-bttom:#fff;	
+}
+
+#mix table td{
+	padding-top:2px;
+	border:none;
+}
+
+#mix table tr:first-child{
+	border-bottom:1px solid #fff;
+}
+
+#mix table td:first-child{
+	border-right:1px solid #fff;
+	width:45%;
+}
+
+#mix table td span:first-child{
+	color:#fff;
+	font-family: 'dosismedium';
+	font-size:18px;
+	width:80px;
+	display:inline-block;
+	text-align:right;
+}
+
+#mix table td span:last-child{
+	color:#004262;
+	font-family: 'dosismedium';
+	font-size:16px;
+	margin-left:5px;
+	text-align:left;
+}
 
 
-/*Service*/
+
+/*Responsive Networks*/
+@media (max-width: 1200px){
+	
+	.network-home{
+		text-align:center;
+	}
+	
+	#pick-ntwrk, #docs{
+		width:50%;
+	}
+	
+	#mix{
+		width:100%;
+	}
+	
+	#mix table td:first-child{
+		width:50%;
+	}
+	
+	.network-home{
+		padding-bottom:50px;
+	}
+	
+}
+
+@media (max-width: 767px){
+	#pick-ntwrk, #docs{
+		width:100%;
+	}
+	
+	#mix{
+		width:100%;
+	}
+	
+	.network-home{
+		padding-bottom:50px;
+	}
+}
+
+
+
+
+
+/*Services
+-------------------------------*/
+
+
 .service {
 	overflow: hidden; 
 	margin-bottom: 10px;

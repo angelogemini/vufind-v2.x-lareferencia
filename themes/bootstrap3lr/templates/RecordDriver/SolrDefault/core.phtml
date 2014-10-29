@@ -19,15 +19,9 @@
 	          <?=$this->record($this->driver)->getFormatList()?>  	
 	        </div>
 	      <? endif; ?>
-	      	<div class="thumb">
-	      	  <div class="ntwrk-name">
-		      	<?$raw_data= $this->driver->getRawData();?>
-		        <?=$raw_data["network_name"]?>	
-	      	  </div>
-	      	  <div class="format">
-	            <?=$this->record($this->driver)->getFormatList()?>
-	          </div> 	          	
-	        </div>
+			
+		  <!-- Render thumb -->
+		  <?=$this->render("RecordDriver/SolrDefault/thumb.phtml")?>    
 	
 	      <? /* Display qrcode if appropriate: */ ?>
 	      <? $QRCode = $this->record($this->driver)->getQRCode("core"); ?>

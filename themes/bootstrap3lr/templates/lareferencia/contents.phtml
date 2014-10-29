@@ -1,0 +1,28 @@
+<?
+    // Set page title.
+    $this->headTitle($this->translate('Contents'));
+?>
+
+<style>
+
+	#static-content li {
+		margin-bottom: 10px;
+	
+	}
+
+
+</style>
+
+<div id="static-content" class="<?=$this->layoutClass('mainbody')?>">
+
+
+   <?=$this->render("home/contents/". $this->section . "_" . $this->layout()->userLang. ".phtml")?>
+	
+             
+<!-- /.main -->     
+</div>
+
+
+<!--  div class="<?=$this->layoutClass('sidebar')?>">
+  <?=$this->render("lareferencia/menu.phtml")?>
+</div-->

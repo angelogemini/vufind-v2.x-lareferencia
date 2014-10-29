@@ -5,6 +5,7 @@ $config = array(
     'controllers' => array(
         'invokables' => array(
             'statistics' => 'LaReferencia\Controller\StatisticsController',
+        	'contents' => 'LaReferencia\Controller\ContentsController'       		
         ),
     ),
 	'service_manager' => array(
