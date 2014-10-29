@@ -131,6 +131,19 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     	return $view;
     }
     
+    public function mapAction() {
+    	
+    	$view = $this->createViewModel();
+    	$view->setTemplate('lareferencia/map');
+    	$config = $this->getConfig();
+    	
+    	$lrbStats = $this->getServiceLocator()->get('LaReferencia\LRBackendStats');
+    	
+    	$view->data = $lrbStats->getNetworkList();
+    	
+    	return $view;	
+    }
+    
     
 }
 
