@@ -270,3 +270,85 @@
 .service .service-icon.icon-plane {
 	font-size: 43px;
 }
+
+
+
+/*Partners
+------------------------------------*/
+.partners{
+	overflow:hidden;
+}
+
+.partners {
+   box-shadow:none !important;
+   margin-bottom: 0 !important;    
+}
+.partners li {
+   overflow: hidden;
+   position: relative;
+   background: #fafafa;
+   margin-left:26px;
+   opacity:.7;
+}
+.partners li:hover {
+   background: #f6f6f6;
+   opacity:1;
+}
+.partners li img.color-img {
+   top: 0;
+   left: 0;
+   display: none;
+   position: absolute;
+}
+.partners li:hover img.color-img { 
+   display: block;
+}
+.partners li img {
+   filter: gray; /* IE6-9 */
+   float: none !important;
+   margin: 0 auto !important;
+}
+
+.partners li img:hover {
+    filter: none;
+}
+.partners, 
+.flexslider {
+    border: 0;
+    overflow: hidden;
+    margin-top: 10px;      
+    margin-bottom: 30px;      
+}
+
+.flexslider { 
+   margin-top: 10px !important;
+   background: none !important;
+}
+.flexslider .flex-direction-nav a {
+   margin-top: -10px !important;
+}
+
+
+
+
+/*pick-nodes*/
+
+.pick-node{
+	list-style:none;
+	float:left;
+	display:block;
+	margin-left:20px;
+}
+
+.pick-node:first-child{
+	margin-left:0px;
+}
+
+.pick-node img{
+	height:100px;
+	width:auto;
+}
+
+.pick-node-color{
+	display:none;
+}

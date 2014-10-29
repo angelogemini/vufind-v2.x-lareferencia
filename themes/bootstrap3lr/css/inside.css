@@ -203,3 +203,54 @@ One Record ---------------------------*/
 	width:95%;
 	margin-left:20px;
 }
+
+/*Publication thumbail
+------------------------*/
+
+.thumb{	
+	background-color:#00A5E3;
+	height:100px;
+	width:100px;
+	max-widht:100px;
+	margin:auto;
+	border-radius:5px;
+	border-radius:5px;
+	opacity:.9;
+}
+
+.ntwrk-name{
+	text-align:center;
+	position:relative;
+	top:39px;
+	left:-40px;
+	width:100px;
+	max-widht:100px;
+	float:left;
+	background-color:#404041;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	color:#00A5E3;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+
+.format{
+	text-align:center;
+	position:relative;
+	float:left;
+	left:12px;
+	top:-5px;
+	width:90px;
+	max-widht:100px;	
+	color:#fff;	
+
+}
+
+
+.format span{
+	display:inline-block;
+	line-height:12px;
+}

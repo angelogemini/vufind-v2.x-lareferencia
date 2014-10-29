@@ -17,6 +17,8 @@
       );
     ?>
     <?=$this->headLink()?>
+    
+    
     <?=$this->headStyle()?>
     <?
       // Set global path for Javascript code:
@@ -62,12 +64,13 @@
           $this->headScript()->appendFile("keep_alive.js");
       }
     ?>
+    
     <?=$this->headScript()?>
     <? 
     	$location="home";
 	 	if(strtolower($this->layout()->templateName) !== "home"){
 			$location="no-home";	      	
-      	}    
+      	}   	 
     ?>
     
   </head>
@@ -133,6 +136,7 @@
 	    </footer>
 	    <div class="copyright">
 	    	<?=$this->render('copy.phtml')?>
+	    	
 	    </div>
 	    <!-- MODAL IN CASE WE NEED ONE -->
 	    <div id="modal" class="modal fade hidden-print" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
@@ -147,6 +151,6 @@
 	      </div>
 	    </div>
 	    <?=$this->googleanalytics()?>
-	</div>
+	</div>	
   </body>
 </html>
