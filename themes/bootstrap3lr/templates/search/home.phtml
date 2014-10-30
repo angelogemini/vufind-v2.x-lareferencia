@@ -5,11 +5,10 @@ $this->headTitle ( $this->translate ( 'Search Home' ) );
 // Init home's script
 $this->headScript()->appendFile("init-home.js");
 //Partner's and Node's slider
-$this->headScript()->appendFile("vendor/flexslider-min.js");
+$this->headScript()->appendFile("vendor/infinite-carousel.js");
 
 //Load home styles
  $this->headLink()->appendStylesheet('home.css');
- $this->headLink()->appendStylesheet('vendor/flexslider.css');
 
 // Disable top search box -- this page has a special layout.
 $this->layout ()->searchbox = false;
@@ -93,11 +92,11 @@ $this->layout ()->breadcrumbs = false;
 	<?=$this->render("home/news/news-".$this->layout()->userLang.".phtml")?>
 	
 	
-	<div>
+	<div class="partners">
 		<div class="headline">
 			<h2>Nuestros socios</h2>
 		</div>
-		<div id="partners" class="row partners flexslider">
+		<div class="row">
 			<?=$this->render("partners.phtml")?>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-/*no-home main div*/
+/*No-home main div*/
 
 .no-home .main{
 	margin-top:20px;
@@ -122,6 +122,7 @@ Search Box
 /*
 Side bar filters
 ----------------------------------------*/
+
 .sidebar .title{
 	background:#AFAFAF;
 	color:#FFF;
@@ -162,10 +163,19 @@ One Record ---------------------------*/
 	display:inline;
 }
 
+
 .journal-toolbar li a{
 	padding:0 5px 0 5px;
 	margin:0 7px 0 7px;
 	display:inline-block;
+}
+
+.toolbar-socials li a{
+	margin:0;
+}
+
+.toolbar-socials span{
+	margin-right:7px;
 }
 
 .journal-toolbar .dropdown > a:after,.journal-toolbar .dropdown-submenu > a:after{
@@ -190,6 +200,7 @@ One Record ---------------------------*/
 @media (max-width: 1000px){
 		.record h3{
 			text-align:center;
+			clear:both;
 		}
 		.recordcover{
 			margin:auto;
@@ -203,6 +214,8 @@ One Record ---------------------------*/
 	width:95%;
 	margin-left:20px;
 }
+
+
 
 /*Publication thumbail
 ------------------------*/

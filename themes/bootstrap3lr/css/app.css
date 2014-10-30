@@ -186,36 +186,6 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
   }
 }
 
-/*Heading Sizes*/
-h2.heading-md {
-  font-size: 20px;
-  line-height: 24px;
-}
-
-h2.heading-sm,
-h3.heading-md {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-h3.heading-md {
-  line-height: 22px;
-}
-
-h3.heading-sm {
-  font-size: 16px;
-  line-height: 20px;
-}
-
-h2.heading-xs {
-  font-size: 16px;
-  line-height: 22px;
-}
-
-h3.heading-xs {
-  font-size: 14px;
-  margin-bottom: 0;
-}
 
 /*Tables
 ------------------------------------*/
@@ -382,10 +352,10 @@ a.btn-u {
 .btn-u:active, 
 .btn-u.active, 
 .open .dropdown-toggle.btn-u {
-   background: #5fb611;
+   background: #00A5E3;
 }
 .btn-u-split.dropdown-toggle {
-   border-left: solid 1px #5fb611;
+   border-left: solid 1px #00A5E3;
 }
 
 
@@ -397,31 +367,12 @@ a.btn-u {
 .btn-u.btn-u-default:active, 
 .btn-u.btn-u-default.active, 
 .open .dropdown-toggle.btn-u.btn-u-default {
-   background: #7f8c8d;
+   background: #7f8c8d;	
 }
 .btn-u.btn-u-split-default.dropdown-toggle {
    border-left: solid 1px #7f8c8d;
 }
 
-/*Badges and Labels
-------------------------------------*/
-/*Labels*/
-.label-info{
-	background: #80A9B2;
-	font-weight:normal;
-	font-size:12px;
-}
-
-/*Badge Icons*/
-.badge-lists.badge-icons span.badge {
-  min-width: 12px;
-  padding: 3px 6px;
- }
-
-.badge-lists.badge-icons i {
-  font-size: 18px;
-  min-width: 25px;
-}
 
 /*Icons
 ------------------------------------*/
@@ -470,145 +421,13 @@ a.btn-u {
 .social_googleplus {background: url(images/social/googleplus.png) no-repeat;}
 .social_twitter {background: url(images/social/twitter.png) no-repeat;}
 
-/*Font Awesome Icon Styles*/
-i.icon-custom {
-  color: #555;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  line-height: 40px;
-  margin-bottom: 5px;
-  text-align: center;
-  display: inline-block;   
-  border: solid 1px #555;
-}
 
-i.icon-sm {
-   width: 35px;
-   height: 35px;
-   font-size: 16px;
-   line-height: 35px;
-}
-
-i.icon-lg {
-  width: 60px;
-  height: 60px;
-  font-size: 31px;
-  line-height: 60px;
-  margin-bottom: 10px;
-}
-
-i.icon-2x {
-  font-size: 30px;
-}
-i.icon-3x {
-  font-size: 40px;
-}
-i.icon-4x {
-  font-size: 50px;
-}
-
-/*Line Icons*/
-i.icon-line {
-  font-size: 17px;
-}
-i.icon-sm.icon-line {
-  font-size: 14px;
-}
-i.icon-lg.icon-line {
-  font-size: 28px;
-}
-
-i.icon-2x.icon-line {
-  font-size: 27px;
-}
-i.icon-3x.icon-line {
-  font-size: 36px;
-}
-i.icon-4x.icon-line {
-  font-size: 47px;
-}
-
-/*Icon Styles For Links*/
-.link-icon,
-.link-bg-icon {
-  color: #555;  
-}
-
-.link-icon:hover,
-.link-bg-icon:hover {
-  border: none;  
-  text-decoration: none;
-}
-
-.link-icon:hover i {
-  color: #72c02c;
-  background: none;
-  border: solid 1px #72c02c;
-}
-
-.link-bg-icon:hover i {
-  color: #72c02c;
-  background: #72c02c;
-  border-color: #72c02c;
-  color: #fff !important;
-}
-
-/* Make Font Awesome icons fixed width */
-.fa-fixed [class^="fa"],
-.fa-fixed [class*=" fa"] {
-  width: 1.25em;
-  text-align: center;
-  display: inline-block;
-}
-.fa-fixed [class^="fa"].fa-lg,
-.fa-fixed [class*=" fa"].fa-lg {
-  /* increased font size for fa-lg */
-  width: 1.5625em;
-}
-
-/*Typography
-------------------------------------*/
-/*Text Dropcap*/
-.dropcap {
-  float: left; 
-  color: #72c02c; 
-  padding: 5px 0;
-  font-size: 45px; 
-  font-weight: 200;
-  line-height: 30px; 
-  margin: 0px 5px 0 0;
-}
-
-.dropcap-bg {
-  float: left; 
-  color: #fff; 
-  padding: 7px 0;
-  min-width: 50px;
-  font-size: 35px; 
-  font-weight: 200;
-  line-height: 35px; 
-  text-align: center;
-  background: #72c02c;
-  margin: 4px 10px 0 0;
-}
 
 /*List Styles*/
 .list-styles li {
    margin-bottom: 8px;
 }
 
-/*Media (Audio/Videos and Images)
-------------------------------------*/
-/*Images*/
-img.img-bordered {
-  padding: 3px;
-  border: solid 1px #eee;
-}
-
-img.img-circle {
-  border-radius: 50% !important;  
-}
 
 /*Spaces
 ------------------------------------*/
@@ -752,17 +571,6 @@ img.img-circle {
 
 .text-right{
 	text-align:right;
-}
-
-/*Background Light*/
-.bg-light { 
-   padding:10px 15px; 
-   margin-bottom:10px; 
-   background:#fcfcfc; 
-   border:solid 1px #e5e5e5;
-}
-.bg-light:hover { 
-   border:solid 1px #bbb;
 }
 
 /*CSS3 Hover Effects*/

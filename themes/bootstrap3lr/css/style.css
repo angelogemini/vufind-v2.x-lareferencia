@@ -1,14 +1,9 @@
 /*Import Global Compulsory CSS Files*/
 /*
 @import url(app.css);
-@import url(../plugins/plugins.css);
 @import url(ie8.css);*/
 
 /*Import CSS Plugins*/
-/*
-@import url(../plugins/animate.css);
-@import url(../plugins/box-shadows.css);
-*/
 
 /*Boxed Layout
 ------------------------------------*/
@@ -823,36 +818,13 @@ a.thumbnail {
 
 /*Footer Common classes
 ------------------------------------*/
-/*Thumb Headline*/
-.thumb-headline h2 {
-	color: #eee;
-	font-size: 16px;
-}
+
 
 /*Footer Logo*/
 .footer-logo {
 	margin: 17px 0 20px;
 }
 
-/*Latest List*/
-.latest-list li {
-	padding: 8px 0;
-	border-top: 1px solid #353535;
-}
-
-.latest-list li:first-child {
-	padding-top: 0;
-	border-top: none;
-}
-
-.latest-list li a {
-	color: #eee;
-}
-
-.latest-list small {
-	color: #999;
-	display: block;
-}
 
 /*Link List*/
 .link-list li {
@@ -877,34 +849,7 @@ a.thumbnail {
 	margin-top: 10px;
 }
 
-/*Latest Tweets*/
-.latest-tweets .latest-tweets-inner p {
-	color: #555;
-	font-size: 13px;
-}
 
-.latest-tweets .latest-tweets-inner a {
-	/*color: #3498db;*/
-	text-decoration: none;
-}
-.latest-tweets .latest-tweets-inner a:hover {
-	text-decoration: underline;
-}
-
-.latest-tweets .latest-tweets-inner i.fa {
-	top: 2px;
-	float: left;
-	color: #bbb;
-	color: #55acee;
-	font-size: 18px;
-	margin-right: 5px;
-	position: relative;
-}
-
-.latest-tweets .latest-tweets-inner small {
-	color: #777;
-	display: block;
-}
 
 /*Social Icons*/
 .social-icons {
@@ -979,47 +924,4 @@ a.thumbnail {
 
 .sb-toggle-right:hover {
     color: #eee;
-}
-
-
-
-/*Status Bar
-------------------------------------*/
-.status-bar li {
-	padding-left: 9px;
-	border-left: 1px solid #eee;
-}
-
-.status-bar li:first-child {
-	border-left: none;
-}
-
-.status-bar li i {
-	color: #00a5e3;
-	margin-right: 5px;
-}
-
-.status-bar li a:hover {
-	text-decoration: none;
-}
-
-.status-bar-in {
-	padding: 10px;
-	position: relative;
-	background: #f0f0f0;
-}
-
-.status-bar-in:after {
-	width: 0; 
-	height: 0;
-	top: -10px;
-	left: 50px;
-	content: " "; 
-	display: block; 
-	position: absolute;
-	border-bottom: 11px solid #f0f0f0;	
-	border-left: 11px solid transparent;
-	border-right: 11px solid transparent;
-	border-left-style: inset; /*FF fixes*/
-	border-right-style: inset; /*FF fixes*/
 }

@@ -1,6 +1,6 @@
 //toggle partner's images
 $(document).ready(function() {
-	
+/*	
 $('#partners').flexslider({
     animation: "slide",
     easing: "swing",
@@ -12,12 +12,21 @@ $('#partners').flexslider({
     controlNav: false,
     directionNav: false,
     move: 2
-});
+});*/
 		
 $(".pick-nodes a").hover(function(e) {	
 	e.preventDefault();
     $(this).find('img').toggle();
 });
+
+$(".partners a").hover(function(e) {	
+	e.preventDefault();
+    $(this).find('img').toggle();
+});
+
+
+$('#viewport').carousel(); 
+
 
 });
 

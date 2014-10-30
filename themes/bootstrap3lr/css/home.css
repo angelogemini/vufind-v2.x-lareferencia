@@ -273,6 +273,11 @@
 	width:45%;
 }
 
+#mix table td span{
+	display:inline-block;
+}
+
+
 #mix table td span:first-child{
 	color:#fff;
 	font-family: 'dosismedium';
@@ -297,6 +302,7 @@
 	
 	.network-home{
 		text-align:center;
+		height:100%;
 	}
 	
 	#pick-ntwrk, #docs{
@@ -324,14 +330,35 @@
 	
 	#mix{
 		width:100%;
+		height:118px;	
 	}
 	
 	.network-home{
 		padding-bottom:50px;
 	}
+	
+	#mix table td span{
+		display:block;
+		margin:0;
+		padding:0;
+		width:100%;		
+	}	
+	
+	#mix table td span:first-child{
+		width:100%;
+		text-align:center;
+	}
+	
+	
+	#mix table td span:last-child{
+		text-align:center;	
+	}
+	
+	
+	
+	
+	
 }
-
-
 
 
 
@@ -401,6 +428,51 @@
 
 /*Partners
 ------------------------------------*/
+#viewport{
+	width: 100%; /* Defines the size of the visible part of the carousel
+		Attention : if you only want to see plain items in the viewport,
+		the width of the viewport should take into account of :
+		- the items width
+		- the right and left padding of items
+		- the number of items you want to see in the viewport
+	 */
+	overflow:hidden; /* Hides extra elements, those outside the viewport area */
+	height:70px;
+	margin-left:25px;
+	padding:0;
+}`
+
+#viewport ul{
+	position: relative !important; /* Enables positionning of elements inside viewport */
+	padding: 0; /* Resets default - User Agent - style */
+}
+
+.sildes-list{
+	position: relative !important; /* Enables positionning of elements inside viewport */
+	padding: 0; /* Resets default - User Agent - style */	
+}
+
+#viewport li{
+	width: 117px; /* Defines the size of inner element */
+	height: 35px;
+	float: left; /* Places list items side by side*/
+	list-style: none; /* Resets default - User Agent - style */
+	/* Cosmetic */
+	margin: 0 1px;
+	padding: 5px;
+	text-align:center;
+}
+
+
+.partner-color{
+	display:none;
+}
+
+.partners a img:not(.partner-color){
+	opacity:.8;
+}
+
+/*
 .partners{
 	overflow:hidden;
 }
@@ -430,9 +502,10 @@
    display: block;
 }
 .partners li img {
-   filter: gray; /* IE6-9 */
+   
    float: none !important;
    margin: 0 auto !important;
+
 }
 
 .partners li img:hover {
@@ -454,6 +527,11 @@
    margin-top: -10px !important;
 }
 
+.flexslider .slides img {
+    width: 103px !important;
+    height: 60px !important;
+}
+*/
 
 
 
