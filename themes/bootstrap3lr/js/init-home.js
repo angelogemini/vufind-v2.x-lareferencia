@@ -25,7 +25,8 @@ $(".partners a").hover(function(e) {
 });
 
 
-$('#viewport').carousel(); 
+$('#partns-viewport').carousel(5000); 
+$('#nodes-viewport').carousel(5000);
 
 
 });

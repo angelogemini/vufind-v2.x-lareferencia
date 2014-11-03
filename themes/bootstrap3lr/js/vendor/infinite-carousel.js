@@ -3,7 +3,10 @@
  * @extends jquery
  */
 
-jQuery.fn.carousel = function(){
+		
+
+
+jQuery.fn.carousel = function(time){
 	var sliderList = jQuery(this).children()[0];
 	
 	
@@ -15,7 +18,6 @@ jQuery.fn.carousel = function(){
 		shownInViewport = Math.round(jQuery(this).width() / sizeFirstElmnt),
 		firstElementOnViewPort = 1,
 		isAnimating = false;
-		
 		
 		for (i = 0; i < shownInViewport; i++) {
 			jQuery(sliderList).css('width',(numElmts+shownInViewport)*increment + increment + "px");
@@ -44,9 +46,8 @@ jQuery.fn.carousel = function(){
 			}
 		};
 		
-		var intervalId = window.setInterval(slide, 5000);
+		var intervalId = window.setInterval(slide, parseInt(time));		
 		
-		
-		
+
 	}
 };

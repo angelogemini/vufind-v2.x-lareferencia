@@ -11,7 +11,8 @@ return array(
         'print.css:print',
     	'app.css',
     	'style.css',
-    	'inside.css'
+    	'inside.css',
+    	'global-variables.css'
     ),
     'js' => array(
         'vendor/jquery.min.js',
@@ -21,6 +22,7 @@ return array(
         'vendor/rc4.js',
         'common.js',
         'lightbox.js',
+    	'vendor/less.min.js'	
     ),
     'less' => array(
         'active' => false,
