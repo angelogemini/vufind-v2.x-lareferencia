@@ -98,7 +98,9 @@ Morris.Line({
     pointSize: 2,
     smoth: 'false',
     hideHover: false,
-    resize: true
+    resize: true,
+    yLabelFormat: function (y) { return y.toString() + ''; }
+    
 });
 
 

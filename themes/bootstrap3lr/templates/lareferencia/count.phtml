@@ -114,7 +114,8 @@ $.each( data, function( index, value ) {
 Morris.Donut({
     element: 'main-donut-chart',
     data: transData,
-    resize: true
+    resize: true,
+    formatter : function (y, data) { return y; } 
 });
 
 
@@ -145,7 +146,9 @@ $.each( alldata["pivots"], function( network, pivot ) {
 	Morris.Donut({
 	    element: network + '-donut-chart',
 	    data: transPivot,
-	    resize: true
+	    resize: true,
+	    formatter : function (y, data) { return y; } 
+    
 	});	
 });
 
