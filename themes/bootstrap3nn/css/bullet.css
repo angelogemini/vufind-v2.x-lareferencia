@@ -1,0 +1,26 @@
+g.nv-tick text {
+	font-size: 10px;
+}
+
+text.nv-title {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+svg {
+	height: 80px;
+}
+
+.huge {
+font-size: 40px;
+}
+
+.medium {
+font-size: 30px;
+height:60px;
+}
+
+.small-title {
+font-size: 18px;
+height:60px;
+}

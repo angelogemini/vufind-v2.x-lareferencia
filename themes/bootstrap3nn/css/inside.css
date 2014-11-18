@@ -1,0 +1,286 @@
+/*No-home main div*/
+
+.no-home .main{
+	margin-top:20px;
+	margin-bottom:50px;
+}
+
+
+/*
+Search Box
+---------------------*/
+
+.searchbox-container{
+	/*background: url(images/browser-bckg.jpg) repeat;*/
+	background-color:#00A5E3;
+	background-position:0px -18px;
+}
+
+.searchbox-container .searchbox-container{
+	height:30px;
+}
+
+.no-home #searchForm input{
+	background:#fff;
+}
+
+.no-home #searchForm_type{
+	height:30px;
+	margin:0 20px 0 20px;
+	padding:0px 3px 0px 3px;
+}
+
+.no-home #searchForm_lookfor{
+	margin:0 10px 0 10px;	
+	height:30px;
+	padding:0px 3px 5px 3px;
+	min-width:200px;
+}
+
+.no-home .search-controls{
+	margin-bottom:20px;
+}
+
+.no-home #searchForm #searchFormKeepFilters{
+	position:relative;
+	top:5px;
+}
+
+.no-home #advanced{
+	background-color:rgba(255, 255, 255, 0.2);
+	padding:4px;
+	margin-left:10px;
+}
+
+/*Responsive Search Box*/
+@media (max-width: 767px){
+	.no-home #searchForm_lookfor, .no-home #searchForm_type{
+		margin:20px 20px 20px 0px;
+	}
+}
+
+
+/* Results
+--------------------------------- */
+
+.results-summary{
+	padding-top:5px;
+}
+
+
+.result{
+	margin:20px 0 20px 0;
+	background:#F4F4F4;
+	padding:20px;
+	border-radius:7px;
+}
+
+.result label{
+	width:18px;
+	height:18px;
+	color:#CCC;
+}
+
+
+.result .checkbox{
+	padding:0 0 0 5px;
+}
+
+.result .title{
+	width:100%;
+	font-family: 'dosismedium';
+	font-weight:normal;
+	font-size:16px;
+	border-bottom:1px solid #CCC;
+	margin:0 0 10px 0;
+	display:inline-block;
+	text-transform:uppercase;
+	letter-spacing:1px;
+}
+
+.auth-date{
+	background:#E2E2E2;
+	border-radius:3px;
+	margin:0 2px 15px 0px;
+}
+
+.fulltext{
+	margin-right:20px;
+}
+
+.filter-checkbox{
+	font-family: 'dosismedium';
+	font-weight:normal;
+}
+
+.searchFormKeepFilters{
+	position:relative !important;
+	margin-top:10px !important;
+}
+
+
+
+/*
+Side bar filters
+----------------------------------------*/
+
+.sidebar .title{
+	background:#AFAFAF;
+	color:#FFF;
+	font-family: 'dosismedium';
+	font-weight:normal;
+	font-size:16px;
+}
+
+.sidebar h4{
+	font-size:15px;
+	padding-left:10px;
+}
+
+.badge{
+	font-family: 'dosismedium';
+	font-weight:normal;
+}
+
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+	background:#398DB9;
+	border:none;
+}
+
+
+/*
+One Record ---------------------------*/
+
+.journal-toolbar{
+	text-align:center;
+	max-width:600px;
+	margin:20px auto 30px auto;
+	padding:3px inherit;
+	border:1px solid #CCC;
+	border-radius:7px;	
+}
+
+.journal-toolbar li{
+	display:inline;
+}
+
+
+.journal-toolbar li a{
+	padding:0 5px 0 5px;
+	margin:0 7px 0 7px;
+	display:inline-block;
+}
+
+.toolbar-socials li a{
+	margin:0;
+}
+
+.toolbar-socials span{
+	margin-right:7px;
+}
+
+.journal-toolbar .dropdown > a:after,.journal-toolbar .dropdown-submenu > a:after{
+	content:"";
+}
+
+.record h3{
+	text-transform:uppercase;
+}
+
+/*responsive journal toolbar*/
+@media (max-width: 767px){
+	.journal-toolbar{
+			width:80%;
+			float:none;
+			position:relative;		
+			margin:20px auto 20px auto;		
+		}	
+		
+}
+
+@media (max-width: 1000px){
+		.record h3{
+			text-align:center;
+			clear:both;
+		}
+		.recordcover{
+			margin:auto;
+		}
+		
+		
+}
+
+
+.main-details{
+	width:95%;
+	margin-left:20px;
+}
+
+
+
+/*Publication thumbail
+------------------------*/
+
+.thumb{	
+	background-color:#00A5E3;
+	height:100px;
+	width:100px;
+	max-widht:100px;
+	margin:auto;
+	border-radius:5px;
+	border-radius:5px;
+	opacity:.9;
+}
+
+.ntwrk-name{
+	text-align:center;
+	position:relative;
+	top:39px;
+	left:-40px;
+	width:100px;
+	max-widht:100px;
+	float:left;
+	text-transform:uppercase;
+	background-color:#404041;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	color:#00A5E3;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+
+.format{
+	text-align:center;
+	position:relative;
+	float:left;
+	left:12px;
+	top:-10px;
+	width:90px;
+	max-widht:100px;	
+	color:#fff;
+	vertical-align:middle;	
+	height:88px;
+}
+
+
+.format span{
+	display:inline-block;
+	width:50px;
+	line-height:15px;
+	font-family: 'dosismedium';
+	font-size:13px;
+	text-transform:uppercase;
+	text-align:left;
+	margin-top:3px;
+}
+
+.format-misc i{
+	opacity:.5;
+	margin-left:-12px;
+	/*position:absolute;
+	bottom:5px;
+	left:28px;*/
+}
