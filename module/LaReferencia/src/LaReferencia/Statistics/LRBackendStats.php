@@ -47,9 +47,9 @@ class LRBackendStats
      *
      * @var Backend
      */
-    protected $solrBackendMngr;
-    protected $solrBiblioBackend;
-    protected $solrStatsBackend;
+    protected $config;
+    protected $BackendWSBaseURL;
+ 
     
     const VALID_TAG = "validSize";
     const TRANSFORMED_TAG = "transformedSize";
@@ -58,17 +58,16 @@ class LRBackendStats
     const ACRONYM_TAG = "acronym";
     const DATESTAMP_TAG = "datestamp";
     
-    
-    
-    
+   
     /**
      * Constructor
      *
      * @param Backend $backend Solr backend
      */
-    public function __construct()
+    public function __construct( /*\Zend\Config\Config $config*/ )
     {
-
+    	/*$this->config = $config;   */	    	
+    	$this->BackendWSBaseURL = "http://localhost:8090"; //isset($config->Backend->wsurl) ? $config->Backend->wsurl : 'http://localhost:8090/backend';
     }
     
    
@@ -81,8 +80,10 @@ class LRBackendStats
      * @return array
      */
     public function getNetworkList()
+    
+    
     {
-    	$networksInfoArray = $this->callJSONService( "http://localhost:8090/public/listNetworks" );
+    	$networksInfoArray = $this->callJSONService( $this->BackendWSBaseURL . "/public/listNetworks" );
     	
     	$aggrInfo = array(self::VALID_TAG => 0, self::TRANSFORMED_TAG => 0, self::TOTAL_TAG => 0);
     	$response  = array();
@@ -124,7 +125,7 @@ class LRBackendStats
     
     public function getHarvestingHistory()
     { 
-    	return $this->callJSONService( "http://localhost:8090/public/listNetworksHistory" );
+    	return $this->callJSONService( $this->BackendWSBaseURL."/public/listNetworksHistory" );
     }
          
 

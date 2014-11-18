@@ -65,9 +65,10 @@ class Factory
      */
     public static function getLRBackendStats(ServiceManager $sm)
     {
+    	
+    	//$config = $sm->getServiceLocator()->get('VuFind\Config')->get('config');
     	//$sm->getServiceLocator()->get('VuFind\Search\BackendManager')->get('SolrStats')
-    
-    	return new \LaReferencia\Statistics\LRBackendStats();
+    	return new \LaReferencia\Statistics\LRBackendStats(/*$sm->getServiceLocator()->get('VuFind\Config')->get('config')*/);
     }
 
 
