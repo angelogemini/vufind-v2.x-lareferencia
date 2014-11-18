@@ -154,7 +154,7 @@
 
 					<? $dataByNetwork = $this->data; ?>
 					<? foreach ( $dataByNetwork["networks"] as $data): ?>
-					<div id="<?=$data["acronym"]?>-bullet-chart">
+					<div id="a<?=$data["acronym"]?>-bullet-chart">
 						<svg></svg>
 					</div>
 					<? endforeach; ?>
@@ -200,7 +200,7 @@
 
 
 
-var <?=$data["acronym"]?>data = {
+var a<?=$data["acronym"]?>data = {
 	  	"title":"<?=$data["name"]?>",		//Label the bullet chart
 	  	"subtitle":"<?=substr($data["datestamp"],0,11)?>",		//sub-label for bullet chart
 	  	"ranges":[<?=$data["transformedSize"]?>,<?=$data["validSize"]?>,<?=$data["size"]?>],	 //Minimum, mean and maximum values.
@@ -215,8 +215,8 @@ nv.addGraph(function() {
 	
   var chart = nv.models.bulletChart();
 
-  d3.select('#<?=$data["acronym"]?>-bullet-chart svg')
-      .datum(<?=$data["acronym"]?>data)
+  d3.select('#a<?=$data["acronym"]?>-bullet-chart svg')
+      .datum(a<?=$data["acronym"]?>data)
       .transition().duration(1000)
       .call(chart);
 
