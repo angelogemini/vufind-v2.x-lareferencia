@@ -1,0 +1,14 @@
+<div class="thumb thumb-in-list">
+	<div class="ntwrk-name">
+		<?$raw_data= $this->driver->getRawData();?>
+		<?=$raw_data["network_name"]?>	
+	</div>
+	<div class="format">
+		<div class="format-misc">
+			<i class="fa fa-bars fa-3x"></i>
+		</div>
+		<span>
+			<?=$this->transEsc($raw_data["format"][0])?>
+		</span>		
+	</div>
+</div>

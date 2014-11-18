@@ -1,0 +1,79 @@
+ <?
+// Set page title.
+$this->headTitle ( $this->translate ( 'Search Home' ) );
+
+// Init home's script
+$this->headScript()->appendFile("init-home.js");
+//Partner's and Node's slider
+$this->headScript()->appendFile("vendor/infinite-carousel.js");
+
+//Load home styles
+ $this->headLink()->appendStylesheet('home.css');
+
+// Disable top search box -- this page has a special layout.
+$this->layout ()->searchbox = false;
+
+// Set default value if necessary:
+if (! isset ( $this->searchClassId )) {
+	$this->searchClassId = 'Solr';
+}
+
+// Load search actions and settings (if any):
+$options = $this->searchOptions ( $this->searchClassId );
+$basicSearch = $options->getSearchAction ();
+$advSearch = $options->getAdvancedSearchAction ();
+
+$this->layout ()->breadcrumbs = false;
+?>
+<div class="searchHomeContent">
+  <? if ($this->ils()->getOfflineMode() == "ils-offline"): ?>
+    <div class="alert alert-warning">
+		<h2><?=$this->transEsc('ils_offline_title')?></h2>
+		<p>
+			<strong><?=$this->transEsc('ils_offline_status')?></strong>
+		</p>
+		<p><?=$this->transEsc('ils_offline_home_message')?></p>
+      <? $supportEmail = $this->escapeHtmlAttr($this->systemEmail()); ?>
+      <p>
+			<a href="mailto:<?=$supportEmail?>"><?=$supportEmail?></a>
+		</p>
+	</div>
+  <? endif; ?>
+  <div class="clearfix">
+    <?=$this->render("search/searchboxhome.phtml")?>
+  </div>
+</div>
+
+<div class="resources">
+	<div class="container">
+		<?=$this->render("home/reg-brws/reg-brws-".$this->layout()->userLang.".phtml")?>
+	</div>
+</div>
+<div class="container content">
+	
+	<!-- ?=$this->render("home/servicies/servicies-".$this->layout()->userLang.".phtml")? -->	
+
+
+	<?=$this->render("home/news/news-".$this->layout()->userLang.".phtml")?>
+	
+	
+	<div class="partners">
+		<div class="headline">
+			<h2>Nuestros socios</h2>
+		</div>
+		<div class="row">
+			<?=$this->render("home/partners.phtml")?>
+		</div>
+	</div>
+	
+	<div class="pick-nodes">
+		<div class="headline">
+			<h2>
+			Repositorios cosechados			
+			</h2>			
+		</div>
+		<div class="row">
+			<?=$this->render("home/nodes.phtml")?>
+		</div>
+	</div>
+</div>

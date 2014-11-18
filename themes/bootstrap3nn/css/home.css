@@ -1,0 +1,591 @@
+/* Search Home
+-----------------------------*/
+
+.searchHomeContent{
+	height:335px;
+	/*background: url(images/browser-bckg.jpg) repeat;*/
+	background-color: #00A5E3;
+	background-position:bottom;
+}
+
+
+#search-home{
+	height:225px;
+	background-color:rgba(255, 255, 255, 0.7);	
+	width:85%;
+	margin:50px 70px auto auto;
+	padding:30px 15px 30px 20px;
+	border-radius:15px;
+}
+
+#search-home h1{
+	color:#00adef;
+	margin: 15px 0 15px 0;
+	font-size:35px;
+}
+
+.arrow{
+	float:left;
+	position:relative;
+	top:9px;
+}
+
+#search-home .form-group{
+	width:100%;
+}
+
+#search-home .twitter-typeahead{
+	heigth:34px;
+	padding:5px 0 10px 0;	
+}
+	
+#search-home .search-query{
+	width:100%;
+	background-color:#fff;
+}
+
+#searchForm_lookfor{
+	background-color:#fff;
+	max-width:100%;
+}
+
+#searchForm_type{
+	width:100%;
+	max-width:100%;
+	min-width:150px;
+	background-color:#585F69;
+	color:#fff;
+}
+
+
+.tt-suggestions .tt-cursor p{
+	color:#fff;
+}
+
+#submit-home{
+	float:right;
+	border:none;
+	width:100px;
+}
+
+
+#advance-search{
+	background-color:#00A5E3;
+	color:#fff;
+}
+
+#advance-search:hover{
+	background-color:#06baf2;	
+	text-decoration:none;
+}
+
+#red {
+	position:relative;
+	top:90px;
+	left:50px
+}
+
+#repo{
+	position:relative;
+	top:93px;
+	left:50px
+}
+
+
+
+#red h2{
+	background-color:#ea6b1f;
+	display:inline;
+	padding:5px 8px 5px 5px;
+	font-size:20px;
+	line-height:40px;
+	color:#fff;
+}
+
+#red h2 span{
+	font-size:25px;
+	display:inline-block;
+	padding-left:5px;
+}
+
+#repo h3{
+	background-color:#404041;
+	color:#fff;
+	display:inline;
+	padding:2px 5px 2px 5px;
+	line-height:25px;
+	font-size:15px;
+	word-spacing:5px;
+}
+
+#repo h3 span{
+	display:inline-block;
+	padding-left:3px;
+}
+
+
+/*Responsive search home*/
+@media (max-width: 990px){
+	
+	#search-home{
+		height:270px;
+		margin:40px auto;	
+	}
+	
+	#search-legend{
+	display:none;
+	}
+	
+}
+
+@media (max-width: 400px){
+	#advance-search, #submit-home{
+		clear:both;
+		float:none;	
+	}
+
+	#advance-search {
+		margin-top:-15px;
+		margin-bottom:5px;
+	}
+}
+
+
+/* Resources Block*/
+.resources {
+	padding: 25px 0 30px;
+	border-bottom: solid 1px #eee;
+}
+.resources p {
+	margin-bottom: 0;
+}
+.resources span {
+	color: #666;
+	display: block;
+	font-size: 24px;
+	line-height: 35px;
+	font-weight: normal;
+	margin-bottom: 12px;
+	font-family: 'Open Sans', sans-serif; 	
+}
+
+.resources .btn-resources {
+	text-align: center;
+}
+
+.resources .btn-resources a {
+	display:block;
+	width:200px;
+	margin:50px 70px auto auto;
+	font-size:17px;
+	padding:10px;
+	float:right;
+}
+
+.resources .btn-u:hover, .resources .btn-u:active{
+	background-color:#0c85aa;
+}
+
+.resources .btn-resources a i {
+	margin-right: 5px;
+}
+
+
+#wht-bwsr{
+	padding-left:70px;
+}
+
+#wht-bwsr p{
+	line-height:15px;
+	text-align:justify;
+}
+
+
+@media (max-width: 992px) {
+	.resources {
+		text-align: center;
+	}
+
+	.resources span {
+		font-size: 22px;
+		line-height: 29px;
+	}
+
+	.resources .btn-resources a {
+		margin:20px auto 0 auto;
+		font-size: 16px;
+		float:none;
+	}
+	
+	#wht-bwsr{
+		padding:10px;
+		
+	}
+	
+}
+
+
+/*Picked networks*/
+
+.network-home{
+	margin-bottom:80px;
+}
+
+#pick-ntwrk, #docs, #mix{
+	height:73px;	
+	float:left;
+}
+
+#pick-ntwrk, #docs{
+	padding:10px 20px 0px 20px;
+	text-align:center;
+}
+
+#pick-ntwrk{
+	background-color:#004262;
+	width:30%;
+}
+
+#docs{
+	background-color:#035172;
+	width:30%;
+}
+
+#mix{
+	background-color:#559BC2;
+	width:40%;
+}
+
+.ntwrk-number{
+	color:#57A6E2;
+	font-size:30px;
+	font-family: 'dosismedium';
+}
+
+.ntwrk-txt{
+	color:#fff;
+	font-size:23px;
+	padding-left:5px;
+}
+
+#mix table tr:first-child{
+	border-bttom:#fff;	
+}
+
+#mix table td{
+	padding-top:2px;
+	border:none;
+}
+
+#mix table tr:first-child{
+	border-bottom:1px solid #fff;
+}
+
+#mix table td:first-child{
+	border-right:1px solid #fff;
+	width:45%;
+}
+
+#mix table td span{
+	display:inline-block;
+}
+
+
+#mix table td span:first-child{
+	color:#fff;
+	font-family: 'dosismedium';
+	font-size:18px;
+	width:80px;
+	display:inline-block;
+	text-align:right;
+}
+
+#mix table td span:last-child{
+	color:#004262;
+	font-family: 'dosismedium';
+	font-size:16px;
+	margin-left:5px;
+	text-align:left;
+}
+
+
+
+/*Responsive Networks*/
+@media (max-width: 1200px){
+	
+	.network-home{
+		text-align:center;
+		height:100%;
+	}
+	
+	#pick-ntwrk, #docs{
+		width:50%;
+	}
+	
+	#mix{
+		width:100%;
+	}
+	
+	#mix table td:first-child{
+		width:50%;
+	}
+	
+	.network-home{
+		padding-bottom:50px;
+	}
+	
+}
+
+@media (max-width: 767px){
+	#pick-ntwrk, #docs{
+		width:100%;
+	}
+	
+	#mix{
+		width:100%;
+		height:118px;	
+	}
+	
+	.network-home{
+		padding-bottom:50px;
+	}
+	
+	#mix table td span{
+		display:block;
+		margin:0;
+		padding:0;
+		width:100%;		
+	}	
+	
+	#mix table td span:first-child{
+		width:100%;
+		text-align:center;
+	}
+	
+	
+	#mix table td span:last-child{
+		text-align:center;	
+	}
+	
+	
+	
+	
+	
+}
+
+
+
+/*Services
+-------------------------------*/
+
+
+.service {
+	overflow: hidden; 
+	margin-bottom: 10px;
+	padding: 15px 15px 10px;
+}
+.service:hover {
+	background: #fcfcfc;
+	/*
+	box-shadow: 0 0 5px #ddd;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;*/
+}
+
+.service i {
+	float:left;
+	width:15%;
+}
+
+.service:hover i {
+	color: #656565;
+}
+
+.service .desc {
+	padding: 0 15px; 
+	float:left;
+	width:85%;
+
+}
+.service .desc h4 {
+	font-size: 22px;
+	line-height: 25px;
+}
+
+.service .desc p{
+	word-wrap: break-word;	
+	text-align:justify;
+} 
+
+.service .service-icon {
+	float: left;
+	padding: 10px;
+	color: #00A5E3;
+	font-size: 35px;  
+	text-align: center;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.service .service-icon.icon-cogs {
+	font-size: 37px;
+}
+.service .service-icon.icon-plane {
+	font-size: 43px;
+}
+
+
+/*Thumbnails on News
+------------------------------------*/
+a.thumbnail {
+	padding: 0;
+	border: none;
+	margin-bottom: 15px;
+}
+
+.thumbnail-style { 
+	margin-bottom: 20px;
+	float:left;	 
+}
+
+.thumbnail-style:hover { 
+	/*
+	box-shadow: 0 0 8px #ddd; 
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;*/
+}
+
+.thumbnail h3,
+.thumbnail-style h3 {
+	margin: 6px 0 8px 0;
+}
+
+.thumbnail h3 a,
+.thumbnail-style h3 a {
+	color: #585f69;
+	font-size: 20px;
+}
+
+.thumbnail h3 a:hover,
+.thumbnail-style h3 a:hover {
+	color: #00a5e3;
+	text-decoration: none;
+}
+
+.thumbnail-style .thumbnail-img {
+	position: relative;
+	margin-bottom: 11px;
+	max-width:350px;
+}
+
+.thumbnail-style a.btn-more {
+	right: -10px;
+	bottom: 10px;
+	color: #fff;
+	padding: 1px 6px;
+	position: absolute;
+	background: #00a5e3;
+	display: inline-block; 
+}
+.thumbnail-style a.btn-more:hover {
+	text-decoration: none;
+	box-shadow: 0 0 0 2px #047ba0;
+}
+.thumbnail-style:hover a.btn-more {
+	right: 10px;
+}
+
+.thumbnail-kenburn img {
+	width:300px;
+	left: 10px;
+	margin-left: -10px;
+	position: relative;
+   -webkit-transition: all 0.8s ease-in-out;
+   -moz-transition: all 0.8s ease-in-out;
+   -o-transition: all 0.8s ease-in-out;
+   -ms-transition: all 0.8s ease-in-out;
+   transition: all 0.8s ease-in-out;
+}
+.thumbnail-kenburn:hover img {
+   -webkit-transform: scale(1.2) rotate(2deg);
+   -moz-transform: scale(1.2) rotate(2deg);
+   -o-transform: scale(1.2) rotate(2deg);
+   -ms-transform: scale(1.2) rotate(2deg);
+   transform: scale(1.2) rotate(2deg);
+}
+
+
+
+/*Partners
+------------------------------------*/
+.viewport{
+	width: 950px; /* Defines the size of the visible part of the carousel
+		Attention : if you only want to see plain items in the viewport,
+		the width of the viewport should take into account of :
+		- the items width
+		- the right and left padding of items
+		- the number of items you want to see in the viewport
+	 */
+	overflow:hidden; /* Hides extra elements, those outside the viewport area */
+	height:70px;
+	margin-left:25px;
+	padding:0;
+	margin:auto;
+}
+
+.viewport ul{
+	position: relative !important; /* Enables positionning of elements inside viewport */
+	padding: 0; /* Resets default - User Agent - style */
+}
+
+.sildes-list{
+	position: relative !important; /* Enables positionning of elements inside viewport */
+	padding: 0; /* Resets default - User Agent - style */	
+}
+
+.viewport li{
+	width: 117px; 
+	height: 35px;
+	float: left; 
+	list-style: none; 
+	margin: 0 1px;
+	padding: 5px;
+	text-align:center;
+}
+
+.partner-color{
+	display:none;
+}
+
+.partners a img:not(.partner-color), .pick-nodes a img:not(.partner-color){
+	opacity:.8;
+}
+
+@media (max-width: 1200px){
+ 	.viewport{
+ 	 width:710px;
+ 	}
+}	
+
+@media (max-width: 992px){
+ 	#partns-viewport, #nodes-viewport{
+ 	 width:590px;
+ 	}
+}
+
+@media (max-width: 600px){
+	#partns-viewport, #nodes-viewport{
+	 	width:350px;
+	}
+	
+@media (max-width: 400px){
+	#partns-viewport, #nodes-viewport{
+		width:240px;
+	}
+}
+}
