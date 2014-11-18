@@ -43,7 +43,7 @@
 				</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body" >	
-					<div style="height: 200px;" id="<?=$data["acronym"]?>-history-chart"></div>
+					<div style="height: 200px;" id="c<?=$data["acronym"]?>-history-chart"></div>
 				</div>
 				<!-- /.panel-body -->
 			</div>
@@ -79,12 +79,12 @@
 <? $dataByNetwork = $this->data; ?>
 <? foreach ( $dataByNetwork as $data): ?>	
 
-var <?=$data["acronym"]?>data = <?=json_encode($data["validSnapshots"]) ?>;  
+var <?="c".$data["acronym"]?>data = <?=json_encode($data["validSnapshots"]) ?>;  
 
 
 Morris.Line({
-    element: '<?=$data["acronym"]?>-history-chart',
-    data: <?=$data["acronym"]?>data,
+    element: '<?="c".$data["acronym"]?>-history-chart',
+    data: <?="c".$data["acronym"]?>data,
     xkey: 'endTime', 
     ykeys: ['size', 'validSize','transformedSize' ],
     labels: ["<?=$this->transEsc('Harvested')?>","<?=$this->transEsc('Valid')?>","<?=$this->transEsc('Transformed')?>"],
