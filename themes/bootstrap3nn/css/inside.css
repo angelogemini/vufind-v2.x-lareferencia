@@ -11,8 +11,8 @@ Search Box
 ---------------------*/
 
 .searchbox-container{
-	/*background: url(images/browser-bckg.jpg) repeat;*/
-	background-color:#00A5E3;
+	background: url(images/browser-bckg.jpg) repeat; 
+	/*background-color:#00A5E3;*/
 	background-position:0px -18px;
 }
 
@@ -62,7 +62,6 @@ Search Box
 
 /* Results
 --------------------------------- */
-
 
 .results-summary{
 	padding-top:5px;
@@ -119,15 +118,6 @@ Search Box
 	margin-top:10px !important;
 }
 
-/*
-Responsive result list
------------------------------------------------------*/
-
-@media (max-width: 900px){
-	.res-list-desc{
-		padding-left:15px !important;
-	}	
-}
 
 
 /*
@@ -233,53 +223,63 @@ One Record ---------------------------*/
 
 .thumb{	
 	background-color:#00A5E3;
+	height:100px;
 	width:100px;
 	max-widht:100px;
 	margin:auto;
 	border-radius:5px;
 	border-radius:5px;
 	opacity:.9;
-	min-height:90px;
 }
 
 .ntwrk-name{
 	text-align:center;
 	position:relative;
+	top:39px;
+	left:-40px;
 	width:100px;
 	max-widht:100px;
+	float:left;
 	text-transform:uppercase;
 	background-color:#404041;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
 	color:#00A5E3;
 	border-top-left-radius:5px;
 	border-top-right-radius:5px;
-	line-height:15px;
-	padding:3px;
 }
 
 .format{
 	text-align:center;
 	position:relative;
+	float:left;
+	left:12px;
+	top:-10px;
 	width:90px;
 	max-widht:100px;	
 	color:#fff;
 	vertical-align:middle;	
-	margin:auto;
-	padding:3px 0px;
+	height:88px;
 }
 
 
 .format span{
 	display:inline-block;
+	width:50px;
 	line-height:15px;
 	font-family: 'dosismedium';
 	font-size:13px;
 	text-transform:uppercase;
-	text-align:center;
+	text-align:left;
 	margin-top:3px;
 }
 
 .format-misc i{
 	opacity:.5;
+	margin-left:-12px;
 	/*position:absolute;
 	bottom:5px;
 	left:28px;*/
