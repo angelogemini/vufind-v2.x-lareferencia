@@ -106,11 +106,19 @@ Morris.Line({
 
 
 var columns = [];
-columns.push({ 'data':'name', 'title':'Red' });
+columns.push({ 'data':'name', 'title':'<?=$this->transEsc('Network')?>' });
 
+var timestamps = [];
 $.each( data, function( key, value ) {
-        columns.push( {'data':value["timestamp"], 'title':value["timestamp"]} );
+	timestamps.push(value["timestamp"]);
 }); 
+timestamps.sort();
+
+
+$.each( timestamps, function( index, value ) {
+	columns.push( {'data':value, 'title':value} );
+}); 
+
 
 var tData = {};
 
