@@ -106,14 +106,32 @@ Morris.Line({
 
 
 var columns = [];
-columns.push({ 'data':'timestamp', 'title':'Período' });
+columns.push({ 'data':'name', 'title':'Red' });
 
-$.each( sources, function( key, value ) {
-        columns.push( {'data':key, 'title':key} );
+$.each( data, function( key, value ) {
+        columns.push( {'data':value["timestamp"], 'title':value["timestamp"]} );
 }); 
 
+var tData = {};
+
+$.each( data, function( index, value ) {
+
+	$.each( sources, function( network_name, empty ) {
+
+		if ( tData[network_name] == null ) 
+			 tData[network_name] = {}; 
+
+		tData[network_name]["name"] = network_name;
+		tData[network_name][ value["timestamp"] ] = value[network_name];
+		
+	}); 
+}); 
+
+
+
+
 $('#clicks-datatable').dataTable( {
-    data: data,
+    data: tData,
     columns: columns,
     bFilter: false, 
     bInfo: false,
