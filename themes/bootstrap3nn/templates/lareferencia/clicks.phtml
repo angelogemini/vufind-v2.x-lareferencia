@@ -127,11 +127,14 @@ $.each( data, function( index, value ) {
 	}); 
 }); 
 
-
+var tDataArray = [];
+$.each( tData, function( network_name, value ) {
+	tDataArray.push( value );
+});
 
 
 $('#clicks-datatable').dataTable( {
-    data: tData,
+    data: tDataArray,
     columns: columns,
     bFilter: false, 
     bInfo: false,
