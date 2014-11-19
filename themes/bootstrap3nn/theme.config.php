@@ -12,7 +12,6 @@ return array(
     	'app.css',
     	'style.css',
     	'inside.css',
-    	'global-variables.css'
     ),
     'js' => array(
         'vendor/jquery.min.js',
