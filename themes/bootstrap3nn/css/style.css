@@ -137,7 +137,7 @@
 }
 
 #mini-header{
-	/*background: url(images/browser-bckg.jpg) repeat;*/
+	background: url(images/browser-bckg.jpg) repeat;
 	background-color:#00A5E3;
 	background-position:top;
 	width:100%;
