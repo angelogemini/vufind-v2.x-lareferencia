@@ -159,7 +159,7 @@
 #lemma{
 	position:relative;
  	top:-15px;
- 	
+ 	float:left; 	
 }
 
 /*Navbar Brand*/

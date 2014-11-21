@@ -156,6 +156,7 @@
 }
 
 #lemma{
+	float:left;
 	position:relative;
  	top:-15px;
  	
