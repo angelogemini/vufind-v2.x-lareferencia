@@ -106,14 +106,43 @@ Morris.Line({
 
 
 var columns = [];
-columns.push({ 'data':'timestamp', 'title':'Período' });
+columns.push({ 'data':'name', 'title':'<?=$this->transEsc('Network')?>' });
 
-$.each( sources, function( key, value ) {
-        columns.push( {'data':key, 'title':key} );
+var timestamps = [];
+$.each( data, function( key, value ) {
+	timestamps.push(value["timestamp"]);
+}); 
+timestamps.sort();
+
+
+$.each( timestamps, function( index, value ) {
+	columns.push( {'data':value, 'title':value} );
 }); 
 
+
+var tData = {};
+
+$.each( data, function( index, value ) {
+
+	$.each( sources, function( network_name, empty ) {
+
+		if ( tData[network_name] == null ) 
+			 tData[network_name] = {}; 
+
+		tData[network_name]["name"] = network_name;
+		tData[network_name][ value["timestamp"] ] = value[network_name];
+		
+	}); 
+}); 
+
+var tDataArray = [];
+$.each( tData, function( network_name, value ) {
+	tDataArray.push( value );
+});
+
+
 $('#clicks-datatable').dataTable( {
-    data: data,
+    data: tDataArray,
     columns: columns,
     bFilter: false, 
     bInfo: false,
