@@ -1,4 +1,7 @@
- <?
+
+
+
+<?
 // Set page title.
 $this->headTitle ( $this->translate ( 'Search Home' ) );
 
@@ -25,6 +28,15 @@ $advSearch = $options->getAdvancedSearchAction ();
 
 $this->layout ()->breadcrumbs = false;
 ?>
+
+<style>
+
+div.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+
+</style>
+
 <div class="searchHomeContent">
   <? if ($this->ils()->getOfflineMode() == "ils-offline"): ?>
     <div class="alert alert-warning">
@@ -50,10 +62,37 @@ $this->layout ()->breadcrumbs = false;
 	</div>
 </div>
 <div class="network-home">
-	<div id="pick-ntwrk">
+
+	<div id="pick-ntwrk" class="dropdown">
+        <div class="dropdown-toggle" data-toggle="dropdown">
+			<span class="ntwrk-number">9</span>
+			<span class="ntwrk-txt">Nodos nacionales</span>        
+		</div>
+        <ul class="dropdown-menu">
+            <li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AAR">Argentina</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ABR">Brasil</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ACL">Chile</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ACO">Colombia</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AEC">Ecuador</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ASV">El Salvador</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AMX">México</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3APE">Perú</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AVE">Venezuela</a></li>
+	
+
+        </ul>
+        
+    </div>
+
+    
+    
+    
+	<!--  div id="pick-ntwrk">
 		<span class="ntwrk-number">9</span>
 		<span class="ntwrk-txt">Nodos nacionales</span>
-	</div>
+	</div-->
+	
+	
 	<div id="docs">
 		<span class="ntwrk-number">869 576</span>
 		<span class="ntwrk-txt">Documentos</span>
