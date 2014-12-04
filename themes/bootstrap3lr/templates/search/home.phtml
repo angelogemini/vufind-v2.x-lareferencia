@@ -78,8 +78,6 @@ div.dropdown:hover > ul.dropdown-menu {
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AMX">México</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3APE">Perú</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AVE">Venezuela</a></li>
-	
-
         </ul>
         
     </div>
@@ -94,29 +92,40 @@ div.dropdown:hover > ul.dropdown-menu {
 	
 	
 	<div id="docs">
-		<span class="ntwrk-number">869 576</span>
-		<span class="ntwrk-txt">Documentos</span>
+		<a href="<?=$this->url('home')?>Search/Results?lookfor=*%3A*" style="text-decoration:none;">	
+			<span class="ntwrk-number">869 576</span>
+			<span class="ntwrk-txt">Documentos</span>
+		</a>
 	</div>
 	<div id="mix">
 		<table class="table">
 			<tr>
 				<td>
+					<a href="<?=$this->url('home')?>Search/Results?lookfor=format%3Aarticle">
 					<span>433 830</span>
 					<span>Artículos</span>
+					</a>
+				</a>
 				</td>
 				<td>
+					<a href="<?=$this->url('home')?>Search/Results?lookfor=format%3AdoctoralThesis">
 					<span>125 116</span>
 					<span>Tesis de Doctorado</span>
+					</a>
 				</td>
 			</tr>
 			<tr>
 				<td>
+				    <a href="<?=$this->url('home')?>Search/Results?lookfor=format%3Areport">    
 					<span>3 161</span>
 					<span>Reportes</span>
+					</a>
 				</td>
 				<td>
+					<a href="<?=$this->url('home')?>Search/Results?lookfor=format%3AmasterThesis">
 					<span>315 279</span>
 					<span>Tesis de Maestría</span>
+					</a>
 				</td>
 			</tr>
 		</table>
