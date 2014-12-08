@@ -219,6 +219,11 @@
         <td>
           <? foreach ($urls as $current): ?>
             <a href="<?=$this->escapeHtmlAttr($this->proxyUrl($current['url']))?>"><?=$this->escapeHtml($current['desc'])?></a><br/>
+           
+           <? 		// Agregado de los tags de GoogleScholar - by Lautaro Matas - lmatas
+           			$this->headMeta()->appendName('citation_pdf_url', $this->proxyUrl($current['url']) ); 
+           ?>
+          
           <? endforeach; ?>
           <? if ($openUrl): ?>
             <?=$this->openUrl($openUrl)?><br/>
