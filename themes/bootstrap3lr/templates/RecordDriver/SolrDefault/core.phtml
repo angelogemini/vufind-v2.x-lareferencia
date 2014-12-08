@@ -1,9 +1,16 @@
+
+
 <div class="row" vocab="http://schema.org/" resource="#record" typeof="<?=$this->driver->getSchemaOrgFormats()?> Product">
-  
-  
 
-
-  <div>  
+<? // Agregado de los tags de GoogleScholar - by Lautaro Matas - lmatas
+	$tags = $this->driver->getGoogleScholarTags();
+	foreach ($tags as $tag) {
+		if (!empty($tag['content'])) {
+			$this->headMeta()->appendName($tag['name'], $tag['content']);
+		}
+	}
+?>
+   <div>  
 	 <div class="row">
 	    <div class="text-center col-md-2">
 	      <? /* Display thumbnail if appropriate: */ ?>

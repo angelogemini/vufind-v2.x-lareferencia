@@ -1770,6 +1770,56 @@ class SolrDefault extends AbstractBase
             ? $this->fields['network_acronym']
             : array();
     }
+    
+    /**
+     * Get Google Scholar Tags
+     *
+     * @return array
+     */
+    
+    // Agregado de los tags de GoogleScholar - by Lautaro Matas - lmatas
+    public function getGoogleScholarTags()
+    {
+    	$meta = array();
+    	
+    	$pubDate = $this->getPublicationDates();
+    	$pubDate = empty($pubDate) ? '' : $pubDate[0];
+    	
+    	array_push($meta, array("name" => "citation_title", "content" => $this->getTitle()) ) ;
+    	
+    	array_push($meta, array(
+    			"name" => "citation_author",
+    			"content" => $this->getPrimaryAuthor()
+    	));
+    	
+    	foreach ($this->getSecondaryAuthors() as $author) {
+    		array_push($meta, array("name" => "citation_author", "content" => $author) );
+    	}
+    	
+    	array_push($meta, array(
+    			"name" => "citation_publication_date",
+    			"content" => $pubDate
+    	) );
+    
+ 
+    	array_push($meta, array(
+    			"name" => "citation_issn",
+    			"content" => $this->getCleanISSN()
+    	));
+    	
+    	array_push($meta, array(
+    			"name" => "citation_volume",
+    			"content" => $this->getContainerVolume()
+    	));
+    	
+    	
+    	array_push($meta, array(
+    			"name" => "citation_journal_title",
+    			"content" => $this->getContainerTitle()
+    	));
+        
+    	return $meta;
+    }
 
 	
 }
