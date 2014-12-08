@@ -48,14 +48,29 @@ class Record extends AbstractBase
      */
     public function log($data, $request)
     {
-        $this->save(
-            array(
-                'recordId'     => $data->getUniqueId(),
-                'recordSource' => $data->getNetworkName()
-				
-            ),
-            $request
-        );
+    	
+    	// obtiene la cadena del browser
+    	$server = $request->getServer();
+    	$agent = $server->get('HTTP_USER_AGENT');
+    	$parts = explode(' ', $this->getBrowser($agent));
+    	$browser = strtolower( $parts[0] );
+    	
+    	// Cambio hehco por Lautaro Matas - lmatas
+    	// sólo registra la entrada cuando no tiene bots ni spider en la cadena
+    	
+    	if ( strpos($browser, "bot") == false && strpos($browser, "spider") == false ) {
+    	
+	        $this->save(
+	            array(
+	                'recordId'     => $data->getUniqueId(),
+	                'recordSource' => $data->getNetworkName()
+					
+	            ),
+	            $request
+	        );
+        
+    	}
+        
     }
 
     /**
