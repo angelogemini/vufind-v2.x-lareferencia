@@ -144,6 +144,36 @@ class StatisticsController extends \VuFind\Controller\AbstractBase
     	return $view;	
     }
     
+    /**
+     * Statistics reporting
+     *
+     * @return \Zend\View\Model\ViewModel
+     */
+    public function diagnoseAction()
+    {
+    
+    	$acronym = $this->params()->fromQuery('acronym', '');
+    	
+    	$view = $this->createViewModel();
+    	$view->setTemplate('lareferencia/diagnose');
+    	$config = $this->getConfig();
+    
+    	$lrbStats = $this->getServiceLocator()->get('LaReferencia\LRBackendStats');
+       	
+    	$view->networks = $lrbStats->getNetworkListSimple();
+    	
+    	if ($acronym == '') {
+    		$networks = $view->networks;
+    		$acronym = $networks[0]["acronym"];
+    	}
+    	
+    	$view->data = $lrbStats->getLGKMetadataStatsByNetworkAcronym($acronym);
+    	$view->networkAcronym = $acronym;
+    	
+    	 
+    	return $view;
+    }
+    
     
 }
 
