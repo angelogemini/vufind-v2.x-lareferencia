@@ -46,9 +46,10 @@ Search Box
 }
 
 .no-home #advanced{
-	background-color:rgba(255, 255, 255, 0.2);
-	padding:4px;
-	margin-left:10px;
+  background-color: rgba(38, 86, 128, 1);
+  color: white;
+  padding: 4px;
+  margin-left: 10px;
 }
 
 /*Responsive Search Box*/

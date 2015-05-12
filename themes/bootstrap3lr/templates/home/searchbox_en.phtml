@@ -1,0 +1,70 @@
+<?
+// Set default value if necessary:
+if (! isset ( $this->searchClassId )) {
+	$this->searchClassId = 'Solr';
+}
+
+// Load search actions and settings (if any):
+$options = $this->searchOptions ( $this->searchClassId );
+$handlers = $this->searchbox ()->getHandlers ( $this->searchClassId, isset ( $this->searchIndex ) ? $this->searchIndex : null );
+$handlerCount = count ( $handlers );
+$basicSearch = $this->searchbox ()->combinedHandlersActive () ? 'combined-searchbox' : $options->getSearchAction ();
+$searchHome = $options->getSearchHomeAction ();
+$advSearch = $options->getAdvancedSearchAction ();
+$lastSort = $options->getLastSort ();
+$lastLimit = $options->getLastLimit ();
+?>
+<div class="col-md-6" id="search-legend">
+	<div id="red">
+		<h2>FEDERATED NETWORK OF INSTITUTIONAL REPOSITORIES &nbsp; <span>OF SCIENTIFIC PUBLICATIONS</span></h2>
+	</div>
+	<div id="repo">
+		<h3>We integrate repositories &nbsp;<br><span>of nine Latin American countries<span></h3>
+	</div>
+</div>
+<div class="col-md-6">
+	<div id="search-home">
+		<img class="arrow" src="<?=$this->imageLink('arrow.png') ?>"><h1>Search</h1>
+		<form role="search" class="form-inline" method="get" action="<?=$this->url($basicSearch)?>" name="searchForm" id="searchForm" autocomplete="off">
+			
+			<div class="form-group padding-bottom-20">	
+				<div class="col-lg-8 col-md-7 col-sm-12 no-padding">
+					<!--  input class="form-control search-query<? if($this->searchbox()->autocompleteEnabled($this->searchClassId)):?> autocomplete searcher:<?=$this->escapeHtmlAttr($this->searchClassId) ?><? endif ?>"
+					id="searchForm_lookfor" type="text" name="lookfor"
+					value="<?=$this->escapeHtmlAttr($this->lookfor)?>" /-->
+					
+					<input class="form-control search-query searcher" id="searchForm_lookfor" type="text" name="lookfor"	value="<?=$this->escapeHtmlAttr($this->lookfor)?>" />					
+					
+				</div>	
+				<div class="col-lg-4 col-md-5 col-sm-12 no-padding">	
+				    <? if ($handlerCount > 1): ?>
+				      <select class="form-control" id="searchForm_type" name="type"	data-native-menu="false">
+				        <? foreach ($handlers as $handler): ?>
+				          <option value="<?=$this->escapeHtmlAttr($handler['value'])?>"	<?=$handler['selected'] ? ' selected="selected"' : ''?>>
+				            <?=$handler['indent'] ? '-- ' : ''?><?=$this->transEsc($handler['label'])?>
+				          </option>
+				        <? endforeach; ?>
+				      </select>
+				    <? elseif ($handlerCount == 1): ?>
+				      <input type="hidden" name="type" value="<?=$this->escapeHtmlAttr($handlers[0]['value'])?>" />
+				    <? endif; ?>
+			    </div>			    
+			 </div>
+			 
+			 <div class="form-group"> 
+			 	 <? if ($advSearch): ?>
+			      <a href="<?=$this->url($advSearch)?>" class="btn btn-link" id="advance-search"><i class="fa fa-search-plus"></i> <?=$this->transEsc("Advanced Search")?></a>
+			    <? endif; ?>
+			   	    
+			    <button type="submit" class="btn btn-primary" id="submit-home">
+					<i class="fa fa-search"></i> <?=$this->transEsc("Find")?>
+				</button>	   
+		    </div>
+		    
+		</form>
+		
+		<script type="text/javascript">$("#searchForm_lookfor").focus()</script>
+		
+	</div>
+</div>
+

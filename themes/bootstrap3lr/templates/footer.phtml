@@ -5,22 +5,21 @@
 		class="btn btn-primary btn-lg"><?=$this->transEsc("mobile_link")?></a>
 </div>
 <? endif; ?>
+
 <div class="row">
 	<div class="col-md-4 md-margin-bottom-40">
 		<!-- About -->
 		<div class="headline">
-			<h2>Acerca de</h2>
+			<h2><?=$this->transEsc('Acerca de')?></h2>
 		</div>
-		<p class="margin-bottom-25 md-margin-bottom-40" style="text-align: justify;"> LA Referencia da visibilidad a la producción científica de las instituciones de educación superior e investigación de América Latina, promueve el Acceso Abierto y gratuito al texto completo, con especial énfasis en los resultados financiados con fondos públicos.
-
-		</p>
+		<p class="margin-bottom-25 md-margin-bottom-40" style="text-align: justify;"><?=$this->transEsc('lr_short_text')?></p>
 	</div>
 	<!--/col-md-4-->
 
 	<div class="col-md-4 md-margin-bottom-40">
 		<!-- Instutional site -->
 		<div class="headline">
-			<h2>Sitio institucional</h2>
+			<h2><?=$this->transEsc('Sitio institucional')?></h2>
 		</div>
 		<p>
 			<a href="http://lareferencia.redclara.net" target="_blank">http://lareferencia.redclara.net</a>
@@ -29,7 +28,7 @@
 
 		<!-- Contact Us -->
 		<div class="headline">
-			<h2>Contáctenos</h2>
+			<h2><?=$this->transEsc('Contáctenos')?></h2>
 		</div>
 		<address class="md-margin-bottom-40">
 			Email: <a href="mailto: repositoriosla@gmail.com" class="">
@@ -43,13 +42,13 @@
 	<div class="col-md-4">
 		<!-- Contact Us -->
 		<div class="headline">
-			<h2>Preguntas Frecuentes</h2>
+			<h2><?=$this->transEsc('Preguntas Frecuentes')?></h2>
 		</div>
 		
 			<ul>
 	 	    <!--li><a href="<?=$this->url('home')?>Contents/Home?section=what">¿Qué es el buscador regional LA Referencia? </a></li-->       
-            <li><a href="<?=$this->url('home')?>Contents/Home?section=how">¿Cómo lo hacemos?</a></li>
-            <li><a href="<?=$this->url('home')?>Contents/Home?section=who">¿Quiénes participan?</a></li>
+            <li><a href="<?=$this->url('home')?>Contents/Home?section=how"><?=$this->transEsc("¿Cómo lo hacemos?")?></a></li>
+            <li><a href="<?=$this->url('home')?>Contents/Home?section=who"><?=$this->transEsc("¿Quiénes participan?")?></a></li>
 			</ul>
 			
 	    
@@ -57,13 +56,13 @@
 
 		<!-- Social Links -->
 		<div class="headline">
-			<h2>Síguenos</h2>
+			<h2><?=$this->transEsc('Síguenos')?></h2>
 		</div>
 		<ul class="social-icons">
 			<li><a href="https://www.facebook.com/repositoriosla" data-original-title="Facebook"
 				class="social_facebook"></a></li>
 			<li><a href="https://twitter.com/RepositoriosLA" data-original-title="Twitter" class="social_twitter"></a></li>
-			<!--  li><a href="#" data-original-title="Goole Plus"
+			<!--  li><a href="#" data-original-title="Google Plus"
 				class="social_googleplus"></a></li-->
 		</ul>
 		<!-- End Social Links -->

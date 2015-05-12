@@ -52,7 +52,7 @@ div.dropdown:hover > ul.dropdown-menu {
 	</div>
   <? endif; ?>
   <div class="clearfix">
-    <?=$this->render("search/searchboxhome.phtml")?>
+    <?=$this->render("home/searchbox_". $this->layout()->userLang .".phtml")?>
   </div>
 </div>
 
@@ -66,7 +66,7 @@ div.dropdown:hover > ul.dropdown-menu {
 	<div id="pick-ntwrk" class="dropdown">
         <div class="dropdown-toggle" data-toggle="dropdown">
 			<span class="ntwrk-number">9</span>
-			<span class="ntwrk-txt">Nodos nacionales</span>        
+			<span class="ntwrk-txt"><?=$this->transEsc("Nodos nacionales")?></span>        
 		</div>
         <ul class="dropdown-menu">
             <li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AAR">Argentina</a></li>
@@ -81,36 +81,28 @@ div.dropdown:hover > ul.dropdown-menu {
         </ul>
         
     </div>
-
-    
-    
-    
-	<!--  div id="pick-ntwrk">
-		<span class="ntwrk-number">9</span>
-		<span class="ntwrk-txt">Nodos nacionales</span>
-	</div-->
-	
-	
+    	
 	<div id="docs">
 		<a href="<?=$this->url('home')?>Search/Results?lookfor=*%3A*" style="text-decoration:none;">	
 			<span class="ntwrk-number">783 966</span>
-			<span class="ntwrk-txt">Documentos</span>
+			<span class="ntwrk-txt"><?=$this->transEsc('Documentos')?></span>
 		</a>
 	</div>
+	
 	<div id="mix">
 		<table class="table">
 			<tr>
 				<td>
 					<a href="<?=$this->url('home')?>Search/Results?lookfor=format%3Aarticle">
 					<span>490 833</span>
-					<span>Artículos</span>
+					<span><?=$this->transEsc('Artículos')?></span>
 					</a>
 				</a>
 				</td>
 				<td>
 					<a href="<?=$this->url('home')?>Search/Results?lookfor=format%3AdoctoralThesis">
 					<span>88 599</span>
-					<span>Tesis de Doctorado</span>
+					<span><?=$this->transEsc('Tesis de Doctorado')?></span>
 					</a>
 				</td>
 			</tr>
@@ -118,13 +110,13 @@ div.dropdown:hover > ul.dropdown-menu {
 				<td>
 				    <a href="<?=$this->url('home')?>Search/Results?lookfor=format%3Areport">    
 					<span>1 686</span>
-					<span>Reportes</span>
+					<span><?=$this->transEsc('Reportes')?></span>
 					</a>
 				</td>
 				<td>
 					<a href="<?=$this->url('home')?>Search/Results?lookfor=format%3AmasterThesis">
 					<span>202 798</span>
-					<span>Tesis de Maestría</span>
+					<span><?=$this->transEsc('Tesis de Maestría')?></span>
 					</a>
 				</td>
 			</tr>
@@ -142,7 +134,7 @@ div.dropdown:hover > ul.dropdown-menu {
 	
 	<div class="partners">
 		<div class="headline">
-			<h2>Nuestros socios</h2>
+			<h2><?=$this->transEsc('Nuestros socios')?></h2>
 		</div>
 		<div class="row">
 			<?=$this->render("partners.phtml")?>
@@ -152,7 +144,7 @@ div.dropdown:hover > ul.dropdown-menu {
 	<div class="pick-nodes">
 		<div class="headline">
 			<h2>
-			Nodos cosechados			
+			<?=$this->transEsc('Nodos cosechados')?>			
 			</h2>			
 		</div>
 		<div class="row">

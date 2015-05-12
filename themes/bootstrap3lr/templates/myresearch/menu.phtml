@@ -6,7 +6,7 @@
       <span class="pull-right"><i class="fa fa-star"></i></span>
     </a>
   <? endif; ?>
-  <? if ('ils-none' !== $this->ils()->getOfflineMode()): ?>
+  <? if ('ils-none' !== $this->ils()->getOfflineMode() && false): // TODO: Modificado por LAReferencia ?> 
     <a href="<?=$this->url('myresearch-checkedout')?>" class="list-group-item<?=$this->active == 'checkedout' ? ' active' : ''?>">
       <?=$this->transEsc('Checked Out Items')?>
       <span class="pull-right"><i class="fa fa-book"></i></span>

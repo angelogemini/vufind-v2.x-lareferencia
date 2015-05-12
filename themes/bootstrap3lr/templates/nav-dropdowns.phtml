@@ -2,7 +2,7 @@
     <!-- Home -->
     <li class=" active">
         <a href="<?=$this->url('home')?>">
-            INICIO
+            <?=$this->transEsc("INICIO")?>
         </a>
     </li>
     <!-- End Home -->
@@ -10,11 +10,11 @@
     <!-- Pages -->                        
     <li class="dropdown">
         <a href="<?=$this->url('home')?>Statistics/Map" class="dropdown-toggle" data-toggle="dropdown">
-            PAÍSES
+            <?=$this->transEsc("PAÍSES")?>        
         </a>
         <ul class="dropdown-menu">
-            <li><a href="<?=$this->url('home')?>Statistics/Map">Mapa de la Red</a></li>
-            <li><a href="<?=$this->url('home')?>Contents/Home?section=networks">Nodos e Instituciones cosechadas</a></li>
+            <li><a href="<?=$this->url('home')?>Statistics/Map"><?=$this->transEsc("Mapa de la Red")?> </a></li>
+            <li><a href="<?=$this->url('home')?>Contents/Home?section=networks"><?=$this->transEsc("Nodos e Instituciones cosechadas")?> </a></li>
         </ul>
         
     </li>
@@ -23,12 +23,12 @@
     <!-- Features -->
     <li class="dropdown">
         <a href="<?=$this->url('home')?>Statistics/Networks" class="dropdown-toggle" data-toggle="dropdown">
-            ESTADÍSTICAS
+            <?=$this->transEsc("ESTADÍSTICAS")?>        
         </a>
         <ul class="dropdown-menu">
-            <li><a href="<?=$this->url('home')?>Statistics/Count?field=format">Estadísticas de metadatos</a></li>
-            <!--li><a href="<?=$this->url('home')?>Statistics/Clicks">Estadísticas de acceso</a></li-->
-            <li><a href="<?=$this->url('home')?>Statistics/Networks">Estadísticas de cosecha</a></li>
+            <li><a href="<?=$this->url('home')?>Statistics/Count?field=format"><?=$this->transEsc("Estadísticas de metadatos")?></a></li>
+            <!--li><a href="<?=$this->url('home')?>Statistics/Clicks"><?=$this->transEsc("Estadísticas de acceso")?></a></li-->
+            <li><a href="<?=$this->url('home')?>Statistics/Networks"><?=$this->transEsc("Estadísticas de cosecha")?></a></li>
         </ul>
         
     </li>
@@ -37,7 +37,7 @@
     <!-- Explorar -->
     <li>
         <a href="<?=$this->url('home')?>Browse/Home">
-            EXPLORAR
+            <?=$this->transEsc("EXPLORAR")?> 
         </a>                            
     </li>
     <!-- End Explorar -->
@@ -45,12 +45,12 @@
     <!-- Usuario -->
     <li class="dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-            USUARIO
+            <?=$this->transEsc("USUARIO")?>   
         </a>
         <ul class="dropdown-menu">
-            <li><a href="<?=$this->url('home')?>MyResearch/Home">Identificarse</a></li>
-            <li><a href="<?=$this->url('home')?>MyResearch/Account">Registrarse como usuario</a></li>
-            <li><a href="<?=$this->url('home')?>MyResearch/Recover">Recuperación de contraseña</a></li>
+            <li><a href="<?=$this->url('home')?>MyResearch/Home"><?=$this->transEsc("Identificarse")?></a></li>
+            <li><a href="<?=$this->url('home')?>MyResearch/Account"><?=$this->transEsc("Registrarse como usuario")?></a></li>
+            <li><a href="<?=$this->url('home')?>MyResearch/Recover"><?=$this->transEsc("Recuperación de contraseña")?></a></li>
         </ul>
     </li>                    
     <!-- End Usuario -->
@@ -58,14 +58,13 @@
     <!-- Acerca de -->
     <li class="dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-            ACERCA DE
+        	<?=$this->transEsc("ACERCA DE")?> 
+        	
         </a>
         <ul class="dropdown-menu">
-        
-        
             <!--  li><a href="<?=$this->url('home')?>Contents/Home?section=what">¿Qué es el buscador regional LA Referencia? </a></li-->       
-            <li><a href="<?=$this->url('home')?>Contents/Home?section=how">¿Cómo lo hacemos?</a></li>
-            <li><a href="<?=$this->url('home')?>Contents/Home?section=who">¿Quiénes participan?</a></li>
+            <li><a href="<?=$this->url('home')?>Contents/Home?section=how"><?=$this->transEsc("¿Cómo lo hacemos?")?></a></li>
+            <li><a href="<?=$this->url('home')?>Contents/Home?section=who"><?=$this->transEsc("¿Quiénes participan?")?></a></li>
         </ul>
     </li>                    
     <!-- End Acerca de -->
