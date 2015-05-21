@@ -40,7 +40,7 @@ $this->layout ()->breadcrumbs = false;
 	</div>
   <? endif; ?>
   <div class="clearfix">
-    <?=$this->render("search/searchboxhome.phtml")?>
+     <?=$this->render("home/searchbox_". $this->layout()->userLang .".phtml")?>
   </div>
 </div>
 

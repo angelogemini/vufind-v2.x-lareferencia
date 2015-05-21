@@ -1,5 +1,6 @@
-<? $this->info = $this->recommend->getAuthorInfo() ?>
-<? if (!(empty($this->info['description']) || empty($this->info))): ?>
+<!-- Se comenta la llamada a getAuthorInfo  -->
+<? $this->info = null;//$this->recommend->getAuthorInfo() ?>
+<? if ($this->info != null && !(empty($this->info['description']) || empty($this->info))): ?>
 <div class="well">
   <p class="lead"><?=$this->info['name'] ?></p>
 
@@ -11,4 +12,4 @@
 
   <a class="wikipedia" href="http://<?=$this->info['wiki_lang'] ?>.wikipedia.org/wiki/<?=$this->escapeHtmlAttr($this->info['name']/*url*/) ?>" target="new"><?=$this->transEsc('wiki_link') ?></a>
 </div>
-<? endif; ?>
+<? endif;  ?>
