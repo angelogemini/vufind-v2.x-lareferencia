@@ -5,22 +5,18 @@
 <? $this->headTitle($this->translate('Enlace obsoleto')); ?>
 
 
-<div class="row" style="margin:50px;" ><br/></div>
+<div class="row" style="margin:50px;" ><br/>
    
-<h2><?=$this->transEsc('Este enlace es obsoleto, pero es probable que pueda encontrar la información que busca')?></h2>
+	<h2><?=$this->transEsc('Este enlace es obsoleto, pero es probable que pueda encontrar la información que busca')?></h2>
 	
-<div class="row"><br/>
+	<br/>
             
 	<div class="col-lg-11">
     
-	    <h3>   
-		 <?=$this->transEsc('Ha sido dirigido aquí por un buscador con información obsoleta sobre la colección.')?> 
-		</h3>
-		<h4>
-			<a href='<?=$this->url('home')?>'><?=$this->transEsc('Haga click aquí para utilizar el buscador de la plataforma.')?></a>         
-		</h4>
+	<h3><?=$this->transEsc('Ha sido dirigido aquí por un buscador con información obsoleta sobre la colección.')?> </h3>
+	
+	<h4><a href='<?=$this->url('home')?>'><?=$this->transEsc('Haga click aquí para utilizar el buscador de la plataforma.')?></a></h4>
 		         
-    </div>
 </div>
 
 <? else: ?>
