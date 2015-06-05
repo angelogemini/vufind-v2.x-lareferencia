@@ -163,8 +163,9 @@
 }
 
 /*Navbar Brand*/
-@media (max-width: 992px) {
-	.header .navbar-brand { 
+
+@media (max-width: 1200px) {	
+        .header .navbar-brand { 
 		top: -18px;
 	}
 	
