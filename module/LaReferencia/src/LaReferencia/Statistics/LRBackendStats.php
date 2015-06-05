@@ -79,9 +79,7 @@ class LRBackendStats
      *
      * @return array
      */
-    public function getNetworkList()
-    
-    
+    public function getNetworkList() 
     {
     	$networksInfoArray = $this->callJSONService( $this->BackendWSBaseURL . "/public/listNetworks" );
     	
@@ -115,6 +113,14 @@ class LRBackendStats
     	return $response;
     }
     
+    public function getNetworkListSimple()
+    {
+    	return  $this->callJSONService( $this->BackendWSBaseURL . "/public/listNetworks" );
+    
+    }
+    
+    
+    
     /**
      * Get the total count of a field.
      *
@@ -128,13 +134,27 @@ class LRBackendStats
     	return $this->callJSONService( $this->BackendWSBaseURL."/public/listNetworksHistory" );
     }
          
-
     
+    public function getMetadataStatsBySnapshotID($snapshotID)
+    {
+    	$jsonObj =  $this->callJSONService( $this->BackendWSBaseURL."/public/getMetadataStatsBySnapshotID/".$snapshotID );
+    	
+    	//$jsonString = $jsonObj[];
+    	
+    	return $jsonObj;
+    }
+    
+    public function getLGKMetadataStatsByNetworkAcronym($acronym)
+    {
+    	$jsonObj =  $this->callJSONService( $this->BackendWSBaseURL."/public/getLGKMetadataStatsByNetworkAcronym/".$acronym );
+    	 
+    	//$jsonString = $jsonObj[];
+    	 
+    	return $jsonObj;
+    }
+     
     private function callJSONService($serviceURL) {
     	return json_decode( file_get_contents($serviceURL), true );   	 
     }
-    
-    
-
-
+   
 }
