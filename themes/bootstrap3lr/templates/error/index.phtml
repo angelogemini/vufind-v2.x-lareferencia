@@ -2,14 +2,26 @@
 
 
 
-<? $this->headTitle($this->translate('Record not found')); ?>
+<? $this->headTitle($this->translate('Enlace obsoleto')); ?>
 
- <p><?=$this->transEsc('El registro que busca ha cambiado o ha sido eliminado.')?></p>
-  <p>
-    <a href='/vufind'><?=$this->transEsc('Es probable que haya sido dirigido aquí por un buscador con información obsoleta. Haga click aquí para utilizar el buscador de la plataforma.')?></a>
-    <br/>
-    <?=$_SERVER['HTTP_REFERER']?>
-  </p>
+
+<div class="row"><br/></div>
+   
+<h2><?=$this->transEsc('Este enlace es obsoleto, pero es probable que pueda encontrar la información que busca')?></h2>
+	
+<div class="row"><br/>
+            
+	<div class="col-lg-11">
+    
+	    <p>   
+		 <?=$this->transEsc('Ha sido dirigido aquí por un buscador con información obsoleta sobre la colección.')?> 
+		</p>
+		<h4>
+			<a href='<?=$this->url('home')?>'><?=$this->transEsc('Haga click aquí para utilizar el buscador de la plataforma.')?></a>         
+		</h4>
+		         
+    </div>
+</div>
 
 <? else: ?>
 
