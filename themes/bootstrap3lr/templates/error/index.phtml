@@ -1,8 +1,23 @@
+<? if ( get_class($this->exception) ==  'VuFind\Exception\RecordMissing' ): ?> 
+
+
+
+<? $this->headTitle($this->translate('Record not found')); ?>
+
+ <p><?=$this->transEsc('El registro que busca ha cambiado o ha sido eliminado.')?></p>
+  <p>
+    <a href='/vufind'><?=$this->transEsc('Es probable que haya sido dirigido aquí por un buscador con información obsoleta. Haga click aquí para utilizar el buscador de la plataforma.')?></a>
+    <br/>
+    <?=$_SERVER['HTTP_REFERER']?>
+  </p>
+
+<? else: ?>
+
 <?
   // Set page title.
   $this->headTitle($this->translate('An error has occurred'));
 
-  $this->layout()->breadcrumbs = '<li class="active">Error</li>';
+  $this->layout()->breadcrumbs = '<li class="active">' . get_class($this->exception) . '</li>';
 ?>
 <div class="alert alert-danger">
   <p><?=$this->transEsc('An error has occurred')?></p>
@@ -46,4 +61,6 @@
     <h2><?=$this->transEsc('error_page_parameter_list_heading')?>:</h2>
     <pre><?=$this->escapeHtml(var_export($this->request->getParams(), true))?></pre>
   <? endif; ?>
+<? endif ?>
+
 <? endif ?>
