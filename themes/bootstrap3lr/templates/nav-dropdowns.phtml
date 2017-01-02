@@ -1,24 +1,25 @@
 <ul class="nav navbar-nav">
     <!-- Home -->
     <li class=" active">
-        <a href="<?=$this->url('home')?>">
+        <!--a href="<?=$this->url('home')?>"-->
+        <a href="/joomla">
+
             <?=$this->transEsc("INICIO")?>
         </a>
     </li>
     <!-- End Home -->
 
-    <!-- Pages -->                        
+    <!-- Pages                        
     <li class="dropdown">
         <a href="<?=$this->url('home')?>Statistics/Map" class="dropdown-toggle" data-toggle="dropdown">
             <?=$this->transEsc("PAÍSES")?>        
         </a>
         <ul class="dropdown-menu">
-            <li><a href="<?=$this->url('home')?>Statistics/Map"><?=$this->transEsc("Mapa de la Red")?> </a></li>
             <li><a href="<?=$this->url('home')?>Contents/Home?section=networks"><?=$this->transEsc("Nodos e Instituciones cosechadas")?> </a></li>
         </ul>
         
     </li>
-    <!-- End Pages -->
+     End Pages -->
 
     <!-- Features -->
     <li class="dropdown">
@@ -29,6 +30,7 @@
             <li><a href="<?=$this->url('home')?>Statistics/Count?field=format"><?=$this->transEsc("Estadísticas de metadatos")?></a></li>
             <!--li><a href="<?=$this->url('home')?>Statistics/Clicks"><?=$this->transEsc("Estadísticas de acceso")?></a></li-->
             <li><a href="<?=$this->url('home')?>Statistics/Networks"><?=$this->transEsc("Estadísticas de cosecha")?></a></li>
+            <li><a href="<?=$this->url('home')?>Statistics/Map"><?=$this->transEsc("Mapa de la Red")?> </a></li>
         </ul>
         
     </li>
@@ -55,14 +57,13 @@
     </li>                    
     <!-- End Usuario -->
     
-    <!-- Acerca de -->
+    <!-- Acerca
     <li class="dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
         	<?=$this->transEsc("ACERCA DE")?> 
         	
         </a>
         <ul class="dropdown-menu">
-            <!--  li><a href="<?=$this->url('home')?>Contents/Home?section=what">¿Qué es el buscador regional LA Referencia? </a></li-->       
             <li><a href="<?=$this->url('home')?>Contents/Home?section=how"><?=$this->transEsc("¿Cómo lo hacemos?")?></a></li>
             <li><a href="<?=$this->url('home')?>Contents/Home?section=who"><?=$this->transEsc("¿Quiénes participan?")?></a></li>
             <li><a href="<?=$this->url('home')?>Contents/Home?section=technology"><?=$this->transEsc("Software")?></a></li>
@@ -71,5 +72,5 @@
             
         </ul>
     </li>                    
-    <!-- End Acerca de -->
+    End Acerca de -->
 </ul>

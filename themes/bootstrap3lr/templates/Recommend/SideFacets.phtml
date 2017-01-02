@@ -122,11 +122,11 @@ JS;
               }
             ?>
             <? $moreClass = 'narrowGroupHidden-'.$this->escapeHtmlAttr($title).' hidden'; ?>
-          <? if ($i == 6): ?>
+          <? if ($i == 10): ?>
             <a id="more-narrowGroupHidden-<?=$this->escapeHtmlAttr($title)?>" class="list-group-item" href="javascript:moreFacets('narrowGroupHidden-<?=$title ?>')"><?=$this->transEsc('more')?> ...</a>
           <? endif; ?>
           <? if ($thisFacet['isApplied']): ?>
-            <a class="list-group-item active<? if ($i>5): ?><?=$moreClass ?><?endif ?><? if ($thisFacet['operator'] == 'OR'): ?> facetOR applied" href="<?=$this->currentPath().$results->getUrlQuery()->removeFacet($title, $thisFacet['value'], true, $thisFacet['operator']) ?><? endif ?>">
+            <a class="list-group-item active<? if ($i>9): ?><?=$moreClass ?><?endif ?><? if ($thisFacet['operator'] == 'OR'): ?> facetOR applied" href="<?=$this->currentPath().$results->getUrlQuery()->removeFacet($title, $thisFacet['value'], true, $thisFacet['operator']) ?><? endif ?>">
               <? if($thisFacet['operator'] == 'OR'): ?>
                 <i class="fa fa-check-square-o"></i>
               <? else: ?>
@@ -137,9 +137,9 @@ JS;
           <? else: ?>
             <? $addURL = $this->currentPath().$results->getUrlQuery()->addFacet($title, $thisFacet['value'], $thisFacet['operator']); ?>
             <? if ($allowExclude): ?>
-              <li class="list-group-item facet<?=$thisFacet['operator'] ?><? if ($i>5): ?> <?=$moreClass ?><?endif ?>">
+              <li class="list-group-item facet<?=$thisFacet['operator'] ?><? if ($i>9): ?> <?=$moreClass ?><?endif ?>">
             <? else: ?>
-              <a href="<?=$addURL ?>" class="list-group-item facet<?=$thisFacet['operator'] ?><? if ($i>5): ?> <?=$moreClass ?><?endif ?>">
+              <a href="<?=$addURL ?>" class="list-group-item facet<?=$thisFacet['operator'] ?><? if ($i>9): ?> <?=$moreClass ?><?endif ?>">
             <? endif; ?>
             <span class="badge">
               <?=number_format($thisFacet['count'])?>

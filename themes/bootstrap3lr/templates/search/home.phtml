@@ -58,14 +58,14 @@ div.dropdown:hover > ul.dropdown-menu {
 
 <div class="resources">
 	<div class="container">
-		<?=$this->render("home/reg-brws/reg-brws-".$this->layout()->userLang.".phtml")?>
+		<?/*=$this->render("home/reg-brws/reg-brws-".$this->layout()->userLang.".phtml")*/?>
 	</div>
 </div>
-<div class="network-home">
+<!--div class="network-home">
 
 	<div id="pick-ntwrk" class="dropdown">
         <div class="dropdown-toggle" data-toggle="dropdown">
-			<span class="ntwrk-number">8</span>
+			<span class="ntwrk-number">9</span>
 			<span class="ntwrk-txt"><?=$this->transEsc("Nodos nacionales")?></span>        
 		</div>
         <ul class="dropdown-menu">
@@ -73,18 +73,18 @@ div.dropdown:hover > ul.dropdown-menu {
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ABR">Brasil</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ACL">Chile</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ACO">Colombia</a></li>
+			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ACR">Costa Rica</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AEC">Ecuador</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3ASV">El Salvador</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AMX">México</a></li>
 			<li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3APE">Perú</a></li>
-			<!--li><a href="<?=$this->url('home')?>Search/Results?lookfor=network_acronym%3AVE">Venezuela</a></li-->
         </ul>
         
     </div>
     	
 	<div id="docs">
 		<a href="<?=$this->url('home')?>Search/Results?lookfor=*%3A*" style="text-decoration:none;">	
-			<span class="ntwrk-number">1 341 431</span>
+			<span class="ntwrk-number">1 392 945</span>
 			<span class="ntwrk-txt"><?=$this->transEsc('Documentos')?></span>
 		</a>
 	</div>
@@ -122,33 +122,33 @@ div.dropdown:hover > ul.dropdown-menu {
 			</tr>
 		</table>
 	</div>
-</div>
+</div-->
 
 <div class="container content">
 	
 	<!-- ?=$this->render("home/servicies/servicies-".$this->layout()->userLang.".phtml")? -->	
 
 
-	<?=$this->render("home/news/news-".$this->layout()->userLang.".phtml")?>
+	<? /*=$this->render("home/news/news-".$this->layout()->userLang.".phtml") */?>
 	
 	
-	<div class="partners">
+	<!--div class="partners">
 		<div class="headline">
-			<h2><?=$this->transEsc('Nuestros socios')?></h2>
+			<h2><?/*=$this->transEsc('Nuestros socios')*/?></h2>
 		</div>
 		<div class="row">
-			<?=$this->render("partners.phtml")?>
+			<?/*=$this->render("partners.phtml")*/?>
 		</div>
-	</div>
+	</div-->
 	
-	<div class="pick-nodes">
+	<!--div class="pick-nodes">
 		<div class="headline">
 			<h2>
-			<?=$this->transEsc('Nodos cosechados')?>			
+			<?/*=$this->transEsc('Nodos cosechados')*/?>			
 			</h2>			
 		</div>
 		<div class="row">
-			<?=$this->render("nodes.phtml")?>
+			<?/*=$this->render("nodes.phtml")*/?>
 		</div>
-	</div>
+	</div-->
 </div>
