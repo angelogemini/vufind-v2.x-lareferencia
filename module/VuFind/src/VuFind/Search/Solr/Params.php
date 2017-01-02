@@ -197,7 +197,7 @@ class Params extends \VuFind\Search\Base\Params
      */
     public function setFacetLimit($l)
     {
-        $this->facetLimit = $l;
+        $this->facetLimit = 30; //$l;
     }
 
     /**

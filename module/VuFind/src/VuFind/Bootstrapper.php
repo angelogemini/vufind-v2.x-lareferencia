@@ -428,7 +428,7 @@ class Bootstrapper
                         $response = new HttpResponse();
                         $e->setResponse($response);
                     }
-                    $response->setStatusCode(410);
+                    $response->setStatusCode(404);
                 }
             }
         };
