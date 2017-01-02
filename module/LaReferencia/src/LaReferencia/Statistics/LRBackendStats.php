@@ -67,7 +67,7 @@ class LRBackendStats
     public function __construct( /*\Zend\Config\Config $config*/ )
     {
     	/*$this->config = $config;   */	    	
-    	$this->BackendWSBaseURL = "http://localhost:8090"; //isset($config->Backend->wsurl) ? $config->Backend->wsurl : 'http://localhost:8090/backend';
+    	$this->BackendWSBaseURL = "http://localhost:8080/backend"; //isset($config->Backend->wsurl) ? $config->Backend->wsurl : 'http://localhost:8090/backend';
     }
     
    
