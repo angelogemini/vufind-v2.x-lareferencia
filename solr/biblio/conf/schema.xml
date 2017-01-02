@@ -104,7 +104,7 @@
 
    <field name="type" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="language_invalid" type="string" indexed="true" stored="true" multiValued="true"/>
-   <field name="status" type="string" indexed="true" stored="true"/>
+   <field name="status" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="rights_invalid" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="eu_rights" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="identifier" type="string" indexed="true" stored="true" multiValued="true"/>  
@@ -112,8 +112,8 @@
    <field name="network_name" type="string" indexed="true" stored="true"/>
    <field name="network_acronym" type="string" indexed="true" stored="true"/>
  
-   <field name="instname" type="string" indexed="true" stored="true"/>
-   <field name="reponame" type="string" indexed="true" stored="true"/>
+   <field name="instname" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="reponame" type="string" indexed="true" stored="true" multiValued="true"/>
 
 <!-- fin CAMBIOS LAREFERENCIA -->
 
