@@ -114,7 +114,7 @@
  
    <field name="instname" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="reponame" type="string" indexed="true" stored="true" multiValued="true"/>
-
+<dynamicField name="metadata.*" type="string" indexed="true" stored="true" multiValued="true" />
 <!-- fin CAMBIOS LAREFERENCIA -->
 
    <!-- Core Fields  -->
