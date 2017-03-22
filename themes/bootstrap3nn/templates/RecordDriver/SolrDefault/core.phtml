@@ -127,6 +127,15 @@
           <td><? foreach ($langs as $lang): ?><?= $this->escapeHtml($lang)?><br/><? endforeach; ?></td>
         </tr>
       <? endif; ?>
+      
+      <!-- Esto queda comentado 
+      <? $subjects = $this->driver->getMVField('metadata.dc.subject.none'); if (!empty($subjects)): ?>
+        <tr>
+          <th><?=$this->transEsc('Subject')?>: </th>
+          <td><? foreach ($subjects as $subject): ?><?=$this->escapeHtml($subject)?><br/><? endforeach; ?></td>
+        </tr>
+      <? endif; ?>
+      -->
 
       <? $publications = $this->driver->getPublicationDetails(); if (!empty($publications)): ?>
       <tr>

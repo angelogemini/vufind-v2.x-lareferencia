@@ -1771,6 +1771,35 @@ class SolrDefault extends AbstractBase
             : array();
     }
     
+    
+    /**
+     * Get MultiValued FieldValue from fieldname
+     *
+     * @return array
+     */
+    public function getMVField($fieldname)
+    {
+    
+        /*return isset($this->fields['language']) ?
+            $this->fields['language'] : array();*/
+        
+        return isset($this->fields[$fieldname]) ?
+            $this->fields[$fieldname] : array();
+    }
+
+    /**
+     * Get SingleValued  FieldValue from fieldname
+     *
+     * @return string
+     */
+    public function getSVField($fieldname)
+    {
+        return isset($this->fields[$fieldname]) ?
+            $this->fields[$fieldname] : '';
+    }
+
+    
+    
     /**
      * Get Google Scholar Tags
      *
