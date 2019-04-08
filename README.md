@@ -1,13 +1,6 @@
-VuFind
-======
+VuFind - Branch v2.X utilizado en la etapa inicial del portal LA Referencia
+===========================================================================
 
-Introduction
-------------
-VuFind is an open source discovery environment for searching a collection of
-records.  To learn more, visit http://vufind.org.
-
-
-Installation
-------------
-
-See online documentation at http://vufind.org/wiki/vufind2:installation_notes
+Aclaración
+----------
+Este repositorio se conserva para referencia, pero ya no utilizado en los portales LA Referencia. En su lugar se utiliza la versión vanilla de Vufind actual.
